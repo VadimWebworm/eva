@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block title %} {{quiz.name}} {% endblock %}
+{% load static %}
+
+{% block body %}
+
+  <link rel="stylesheet" href="{% static 'ui/css/style.css' %}">
+
+  <div class="wrapper screen-height">
+    <div class="container">
+      <div class="jumbotron__inner">
+        <div class="jumbotron__inner-item">
+          <h1 id="quest">{{ question.content }}</h1>
+          <p>Отвечайте в микрофон</p>
+        </div>
+        <div class="jumbotron__inner-form">
+          <form>
+            {% csrf_token %}
+            <button class="start-stop" type="button" id="start" >Запись</button>
+            <button class="pause-button" type="button" id="pause" >Пауза</button>
+            <button class="start-stop" type="button" id="stop" >Стоп</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+{% block js %}
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="{% static 'ui/js/recorder.js' %}"></script>
+  <script src="{% static 'ui/js/voice.js' %}"></script>
+  <script src="{% static 'ui/js/main.js' %}"></script>
+{% endblock %}
