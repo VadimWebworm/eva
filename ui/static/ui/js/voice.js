@@ -54,6 +54,7 @@ function pauseRecording() {
 
     }
 }
+
 function stopRecording() {
     console.log("stopButton clicked");
 
@@ -78,7 +79,7 @@ function createDownloadLink(blob) {
     let fd = new FormData();
     fd.append('voice', blob);
 
-    fetch("http://127.0.0.1:5000/", {
+    fetch("http://127.0.0.1:8000/api/1/", {
         method: "POST",
         body: fd
     });
