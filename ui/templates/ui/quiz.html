@@ -14,7 +14,7 @@
           <p>Отвечайте в микрофон</p>
         </div>
         <div class="jumbotron__inner-form">
-          <form>
+          <form name="recorder_form">
             {% csrf_token %}
             <button class="start-stop" type="button" id="start" >Запись</button>
             <button class="pause-button" type="button" id="pause" >Пауза</button>

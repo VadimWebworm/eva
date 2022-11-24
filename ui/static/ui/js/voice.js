@@ -80,6 +80,13 @@ function createDownloadLink(blob) {
     fd.append('voice', blob);
 
     fetch("http://127.0.0.1:8000/api/1/", {
+    credentials: 'include',
+    mode: 'same-origin',
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json',
+      'X-CSRFToken': document.recorder_form.csrfmiddlewaretoken.value
+    },
         method: "POST",
         body: fd
     });

@@ -33,8 +33,8 @@ class ApiView(View):
         }
         return JsonResponse(questions, safe=False, json_dumps_params={'ensure_ascii': False})
 
-    def post(self, request):
+    def post(self, request, quiz_id):
         wav_object = save_wav_to_disk(request)
         user_answer = get_text_from_wav(wav_object)
         score = get_score_from_text(user_answer)
-        return f'{int(round(10 * score))}'
+        return JsonResponse({'Status': 'processing'})
