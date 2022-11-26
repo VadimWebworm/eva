@@ -79,16 +79,14 @@ function createDownloadLink(blob) {
     let fd = new FormData();
     fd.append('voice', blob);
 
-    fetch("http://127.0.0.1:8000/api/1/", {
+    fetch("http://127.0.0.1:8000/api/1/wav/1", {
     credentials: 'include',
     mode: 'same-origin',
     headers: {
-      'Accept': 'application/json',
-      'Content-Type': 'application/json',
       'X-CSRFToken': document.recorder_form.csrfmiddlewaretoken.value
     },
-        method: "POST",
-        body: fd
+    method: "POST",
+    body: fd
     });
 
 }
