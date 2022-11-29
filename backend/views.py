@@ -3,6 +3,8 @@ import json
 from django.core.files.base import ContentFile
 from django.http import JsonResponse
 from django.views.decorators.http import require_POST
+
+from backend.kaldi_utils import wav_to_text
 from ui.models import Quiz
 
 import os
@@ -26,18 +28,12 @@ def save_wav_to_disk(request, quest_id):
     blob = file_in_memory.read()
     with open(filename, 'wb') as fn:
         fn.write(blob)
-    return blob
-
-
-def get_text_from_wav(wav_object):
-    """ Send wav data to VOSK server, get the text response"""
-    logging.info('Send wav data to VOSK server, get the text response')
-    return 'Some text'
+    return filename
 
 
 def get_score_from_text(user_answer):
     """ Send text data to NLP server, get the answer score """
-    logging.info('Send text data to NLP server, get the answer score')
+    logging.info(f'User answer: {user_answer} , calculating score')
     return 0.5
 
 
@@ -51,7 +47,7 @@ def get_quiz_questions(request, quiz_id):
 
 @require_POST
 def process_wav(request, quiz_id, quest_id):
-    wav_blob = save_wav_to_disk(request, quest_id)
-    # user_answer = get_text_from_wav(wav_blob)
-    # score = get_score_from_text(user_answer)
+    wav_filename = save_wav_to_disk(request, quest_id)
+    user_answer = wav_to_text(wav_filename)
+    score = get_score_from_text(user_answer)
     return JsonResponse({'Status': 'processing'})
