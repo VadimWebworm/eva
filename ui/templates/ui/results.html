@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title %} {{quiz.name}} {% endblock %}
+{% load static %}
+
+{% block body %}
+{% for answer in answers %}
+    <div>
+        <h3> {{ answer }} </h3>
+    </div>
+{% endfor %}
+
+{% endblock %}
+
+{% block js %}
+{% endblock %}

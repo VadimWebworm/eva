@@ -1,10 +1,11 @@
 from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
+from django.core.paginator import Paginator
 from django.shortcuts import render, redirect
 
 
-from ui.models import Quiz, Question
+from ui.models import Quiz, Question, Answer
 
 
 def Signup(request):
@@ -58,9 +59,26 @@ def index(request):
 
 
 @login_required(login_url='/login')
-def quiz(request, quiz_id):
+def quiz(request, quiz_id, page):
+    current_quiz = Quiz.objects.get(id=quiz_id)
+    questions = current_quiz.get_questions()
+    paginator = Paginator(questions, 1)
+    page_object = paginator.get_page(page)
+    question = page_object.object_list[0]
     context = {
-        'quiz': Quiz.objects.get(id=quiz_id),
+        'quiz': current_quiz,
+        'question': question,
+        'question_id': question.id,
+        'page_obj': page_object
     }
     return render(request, "ui/quiz.html", context)
+
+
+@login_required(login_url='/login')
+def results(request, quiz_id):
+    answers = Answer.objects.filter(user=request.user)
+    context = {
+        'answers': answers
+    }
+    return render(request, 'ui/results.html', context)
 

@@ -15,6 +15,7 @@ recordButton.addEventListener("click", startRecording);
 stopButton.addEventListener("click", stopRecording);
 pauseButton.addEventListener("click", pauseRecording);
 
+var question_id = document.getElementById("question_id").value
 
 function startRecording() {
     console.log("recordButton clicked");
@@ -79,7 +80,7 @@ function createDownloadLink(blob) {
     let fd = new FormData();
     fd.append('voice', blob);
 
-    fetch("http://127.0.0.1:8000/api/1/wav/1", {
+    fetch("http://127.0.0.1:8000/api/1/wav/" + question_id, {
     credentials: 'include',
     mode: 'same-origin',
     headers: {

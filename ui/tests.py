@@ -37,6 +37,6 @@ class UiTestCase(TestCase):
     def test_quiz(self):
         request = self.factory.get('')
         request.user = self.user
-        response = views.quiz(request, 1)
+        response = views.quiz(request, 1, 1)
         self.assertEqual(response.status_code, 200)
         self.assertContains(response, 'Запись'.encode("ascii", "ignore"))

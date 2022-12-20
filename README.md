@@ -15,10 +15,11 @@
 
 ```
 git clone https://github.com/labintsev/eva.git  
+python manage.py makemigrations  
+python manage.py migrate  
+python manage.py loaddata fixtures/data.json  
 python manage.py runserver 
 ``` 
 
 Откройте браузер по ссылке [localhost:8000](127.0.0.1:8000).
 
-Суперпользователь:  
-admin:admin1234

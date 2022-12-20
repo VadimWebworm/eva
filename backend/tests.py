@@ -1,6 +1,7 @@
 import asyncio
 import json
 
+from django.contrib.auth.models import User
 from django.core.files.uploadedfile import InMemoryUploadedFile, SimpleUploadedFile
 from django.test import TestCase, Client
 
@@ -16,8 +17,11 @@ class BackendTestCase(TestCase):
     def setUp(self):
         quiz = Quiz.objects.create(name='Теория вероятностей', desc='Тест по основам теории вероятностей')
         Question.objects.create(content='Дайте определение теории вероятностей', quiz=quiz)
+        user = User.objects.create(username='test_user')
+        user.set_password('secret')
+        user.save()
         self.client = Client()
-        self.client.login(username='test', password='secret')
+        self.client.login(username='test_user', password='secret')
 
     def test_wav_post(self):
         with open(TEST_FILE_PATH, 'rb') as fn:

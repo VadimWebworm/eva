@@ -10,6 +10,7 @@ async def async_wav_to_text(wav_path):
     async with websockets.connect(KALDI_URI) as websocket:
 
         wf = wave.open(wav_path, "rb")
+        print(wav_path, ' opened')
         await websocket.send('{ "config" : { "sample_rate" : %d } }' % (wf.getframerate()))
         buffer_size = int(wf.getframerate() * 0.5) # 0.2 seconds of audio
         while True:
