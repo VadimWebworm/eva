@@ -1,19 +1,18 @@
-import datetime
 import json
+import os
+import logging
 
+import requests
 from django.contrib.auth.decorators import login_required
-from django.core.files.base import ContentFile
 from django.http import JsonResponse
 from django.utils import timezone
 from django.views.decorators.http import require_POST
 
-from backend.kaldi_utils import wav_to_text
-from ui.models import Quiz, Answer, Question
-
-import os
-import logging
+from ui.models import Answer, Question
 
 logging.basicConfig(filename='logs/logs.log', level=logging.INFO)
+ASR_URL = 'http://asr:5005'
+TS_URL = 'http://ts:5000'
 
 
 def get_user_dir(user_name):
@@ -34,34 +33,44 @@ def save_wav_to_disk(request, quest_id):
     return filename
 
 
-def get_score_from_text(user_answer):
+def wav_to_text(wav_filename):
+    pass
+
+
+def text_to_score(user_answer, true_answer):
     """ Send text data to NLP server, get the answer score """
-    logging.info(f'User answer: {user_answer} , calculating score')
-    return 0.5
+    r = requests.post(TS_URL, json={'s1': user_answer, 's2': true_answer})
+    j_res = json.loads(r.text)
+    score = float(j_res['Similarity'])
 
-
-def get_quiz_questions(request, quiz_id):
-    quiz = Quiz.objects.get(id=quiz_id)
-    questions = {
-        'questions': list(quiz.get_questions().values(), ),
-    }
-    return JsonResponse(questions, safe=False, json_dumps_params={'ensure_ascii': False})
+    logging.info(f'User answer: {user_answer} , Score: {score}')
+    return score
 
 
 @require_POST
 @login_required
 def process_wav(request, quiz_id, quest_id):
     wav_filename = save_wav_to_disk(request, quest_id)
-    user_answer = wav_to_text(wav_filename)
-    print(user_answer)
-    score = get_score_from_text(user_answer)
+    question = Question.objects.get(id=quest_id)
+    if os.getenv('STUB_EVA_SERVICES'):
+        user_answer = 'Сервис распознавания голоса отключен'
+        score = 0.01
+    else:
+        file_wrapper = {'wav_file': open(wav_filename, 'rb')}
+        r = requests.post(ASR_URL, files=file_wrapper)
+        j_str = json.loads(r.text)
+        user_answer = json.loads(j_str)['text']
+        true_answer = question.true_answer
+        score = text_to_score(user_answer, true_answer)
+
     answer = Answer(
         content=user_answer,
-        question=Question.objects.get(id=quest_id),
+        question=question,
         user=request.user,
         wav=wav_filename,
         date_time=timezone.now(),
         score=score
     )
     answer.save()
-    return JsonResponse({'Status': 'processing'})
+    return JsonResponse({'answer': user_answer,
+                         'score': score})

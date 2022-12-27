@@ -16,6 +16,7 @@ class Quiz(models.Model):
 class Question(models.Model):
     content = models.CharField(max_length=200)
     quiz = models.ForeignKey(Quiz, on_delete=models.CASCADE)
+    true_answer = models.CharField(max_length=200)
 
     def __str__(self):
         return self.content
