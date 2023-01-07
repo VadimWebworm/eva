@@ -4,35 +4,38 @@
 
 {% block body %}
 
+
+<!-- cards -->
+
 {% if user.is_authenticated %}
-  <!-- cards -->
-<div class="container">
-  <div class="container mx-auto mt-2">
-    <div class="row">
-
-      {% for quiz in quizzes %}
-      <div class="col-md-4">
-        <div class="card" style="width: 21rem; margin: 1rem">
-          <h4 class="card-title" style="text-align: center;">{{quiz.name}}</h4>
-          <div class="card-body">
-
-            <p class="card-text">{{quiz.desc}}</p>
-            <br>
-            <a class="btn btn-primary" href="/{{quiz.id}}/1">
-              Начать опрос
-            </a>
-          </div>
-        </div>
-      </div>
-      {% endfor %}
+<div class="sliderInnerBackground">
+  {% for quiz in quizzes %}
+  <div class="sliderInnerCard">
+    <div class="cardTitle">{{quiz.name}}</div>
+    <div class="cardInner">
+      <div class="cardText">{{quiz.desc}}</div>
+      <a class="calltoaction__button" href="/{{quiz.id}}/1">
+        Начать опрос
+      </a>
     </div>
   </div>
 </div>
+{% endfor %}
+
+
 
 {% else %}
-<div class="container">
-  <h3>Для работы с Евой нужно авторизоваться</h3>
+<div class="sliderInnerBackground">
+  <div class="sliderBackgroundTitle">
+    Для работы с Евой необходимо авторизоваться
+  </div>
 </div>
+
 {% endif %}
 
+{% endblock %}
+{% block js %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="{% static 'ui/js/libs.min.js' %}"></script>
+<script src="{% static 'ui/js/main.js' %}"></script>
 {% endblock %}

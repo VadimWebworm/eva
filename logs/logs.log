@@ -1,1 +1,2064 @@
 WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+ERROR:django.request:Internal Server Error: /api/1/wav/1
+Traceback (most recent call last):
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\views\decorators\http.py", line 43, in inner
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\diploma\eva\backend\views.py", line 55, in process_wav
+    user_answer = wav_to_text(wav_filename)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\diploma\eva\backend\kaldi_utils.py", line 30, in wav_to_text
+    res = asyncio.run(async_wav_to_text(wav_path))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py", line 190, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 653, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "D:\diploma\eva\backend\kaldi_utils.py", line 10, in async_wav_to_text
+    async with websockets.connect(KALDI_URI) as websocket:
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\websockets\legacy\client.py", line 642, in __aenter__
+    return await self
+           ^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\websockets\legacy\client.py", line 659, in __await_impl_timeout__
+    return await asyncio.wait_for(self.__await_impl__(), self.open_timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\tasks.py", line 479, in wait_for
+    return fut.result()
+           ^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\websockets\legacy\client.py", line 663, in __await_impl__
+    _transport, _protocol = await self._create_connection()
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 1084, in create_connection
+    raise exceptions[0]
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 1063, in create_connection
+    sock = await self._connect_sock(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 967, in _connect_sock
+    await self.sock_connect(sock, address)
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\proactor_events.py", line 726, in sock_connect
+    return await self._proactor.connect(sock, address)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\windows_events.py", line 841, in _poll
+    value = callback(transferred, key, ov)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\windows_events.py", line 628, in finish_connect
+    ov.getresult()
+ConnectionRefusedError: [WinError 1225] Удаленный компьютер отклонил это сетевое подключение
+ERROR:django.request:Internal Server Error: /2/3
+Traceback (most recent call last):
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\diploma\eva\ui\views.py", line 63, in quiz
+    current_quiz = Quiz.objects.get(id=quiz_id)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\models\query.py", line 650, in get
+    raise self.model.DoesNotExist(
+ui.models.Quiz.DoesNotExist: Quiz matching query does not exist.
+INFO:django.utils.autoreload:D:\diploma\eva\ui\views.py changed, reloading.
+INFO:django.utils.autoreload:D:\diploma\eva\ui\views.py changed, reloading.
+INFO:django.utils.autoreload:D:\diploma\eva\ui\views.py changed, reloading.
+ERROR:django.request:Internal Server Error: /api/1/wav/1
+Traceback (most recent call last):
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\views\decorators\http.py", line 43, in inner
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\diploma\eva\backend\views.py", line 55, in process_wav
+    user_answer = wav_to_text(wav_filename)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\diploma\eva\backend\kaldi_utils.py", line 30, in wav_to_text
+    res = asyncio.run(async_wav_to_text(wav_path))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py", line 190, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 653, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "D:\diploma\eva\backend\kaldi_utils.py", line 10, in async_wav_to_text
+    async with websockets.connect(KALDI_URI) as websocket:
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\websockets\legacy\client.py", line 642, in __aenter__
+    return await self
+           ^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\websockets\legacy\client.py", line 659, in __await_impl_timeout__
+    return await asyncio.wait_for(self.__await_impl__(), self.open_timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\tasks.py", line 479, in wait_for
+    return fut.result()
+           ^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\websockets\legacy\client.py", line 663, in __await_impl__
+    _transport, _protocol = await self._create_connection()
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 1084, in create_connection
+    raise exceptions[0]
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 1063, in create_connection
+    sock = await self._connect_sock(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 967, in _connect_sock
+    await self.sock_connect(sock, address)
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\proactor_events.py", line 726, in sock_connect
+    return await self._proactor.connect(sock, address)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\windows_events.py", line 841, in _poll
+    value = callback(transferred, key, ov)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\windows_events.py", line 628, in finish_connect
+    ov.getresult()
+ConnectionRefusedError: [WinError 1225] Удаленный компьютер отклонил это сетевое подключение
+ERROR:django.request:Internal Server Error: /api/1/wav/2
+Traceback (most recent call last):
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\views\decorators\http.py", line 43, in inner
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\diploma\eva\backend\views.py", line 55, in process_wav
+    user_answer = wav_to_text(wav_filename)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\diploma\eva\backend\kaldi_utils.py", line 30, in wav_to_text
+    res = asyncio.run(async_wav_to_text(wav_path))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py", line 190, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 653, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "D:\diploma\eva\backend\kaldi_utils.py", line 10, in async_wav_to_text
+    async with websockets.connect(KALDI_URI) as websocket:
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\websockets\legacy\client.py", line 642, in __aenter__
+    return await self
+           ^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\websockets\legacy\client.py", line 659, in __await_impl_timeout__
+    return await asyncio.wait_for(self.__await_impl__(), self.open_timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\tasks.py", line 479, in wait_for
+    return fut.result()
+           ^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\websockets\legacy\client.py", line 663, in __await_impl__
+    _transport, _protocol = await self._create_connection()
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 1084, in create_connection
+    raise exceptions[0]
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 1063, in create_connection
+    sock = await self._connect_sock(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 967, in _connect_sock
+    await self.sock_connect(sock, address)
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\proactor_events.py", line 726, in sock_connect
+    return await self._proactor.connect(sock, address)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\windows_events.py", line 841, in _poll
+    value = callback(transferred, key, ov)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\windows_events.py", line 628, in finish_connect
+    ov.getresult()
+ConnectionRefusedError: [WinError 1225] Удаленный компьютер отклонил это сетевое подключение
+INFO:django.utils.autoreload:D:\diploma\eva\ui\urls.py changed, reloading.
+WARNING:django.request:Not Found: /
+INFO:django.utils.autoreload:D:\diploma\eva\ui\urls.py changed, reloading.
+INFO:django.utils.autoreload:D:\diploma\eva\ui\urls.py changed, reloading.
+WARNING:django.request:Not Found: /1/2
+WARNING:django.request:Not Found: /1/1
+WARNING:django.request:Not Found: /1/1
+INFO:django.utils.autoreload:D:\diploma\eva\ui\urls.py changed, reloading.
+ERROR:django.request:Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 505, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'static'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\diploma\eva\ui\views.py", line 58, in index
+    return render(request, "ui/index.html", context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\backends\django.py", line 62, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\loader_tags.py", line 132, in render
+    compiled_parent = self.get_parent(context)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\loader_tags.py", line 129, in get_parent
+    return self.find_template(parent, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\loader_tags.py", line 107, in find_template
+    template, origin = context.template.engine.find_template(
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 200, in compile_nodelist
+    return parser.parse()
+           ^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 507, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 568, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 10: 'static'. Did you forget to register or load this tag?
+ERROR:django.request:Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 505, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'static'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\diploma\eva\ui\views.py", line 58, in index
+    return render(request, "ui/index.html", context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\backends\django.py", line 62, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\loader_tags.py", line 132, in render
+    compiled_parent = self.get_parent(context)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\loader_tags.py", line 129, in get_parent
+    return self.find_template(parent, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\loader_tags.py", line 107, in find_template
+    template, origin = context.template.engine.find_template(
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 200, in compile_nodelist
+    return parser.parse()
+           ^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 507, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 568, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 72: 'static'. Did you forget to register or load this tag?
+WARNING:django.request:Not Found: /images/promo__two.jpg
+WARNING:django.request:Not Found: /images/promo__one.jpg
+WARNING:django.request:Not Found: /images/promo__three.jpg
+WARNING:django.request:Not Found: /images/promo__six.jpg
+WARNING:django.request:Not Found: /images/promo__seven.jpg
+WARNING:django.request:Not Found: /images/promo__five.jpg
+WARNING:django.request:Not Found: /images/promo__four.jpg
+WARNING:django.request:Not Found: /images/promo__nine.jpg
+WARNING:django.request:Not Found: /images/promo__eight.jpg
+WARNING:django.request:Not Found: /images/promo__one.jpg
+WARNING:django.request:Not Found: /images/promo__two.jpg
+WARNING:django.request:Not Found: /images/promo__three.jpg
+WARNING:django.request:Not Found: /images/promo__four.jpg
+WARNING:django.request:Not Found: /images/promo__five.jpg
+WARNING:django.request:Not Found: /images/promo__six.jpg
+WARNING:django.request:Not Found: /images/promo__seven.jpg
+WARNING:django.request:Not Found: /images/promo__nine.jpg
+WARNING:django.request:Not Found: /images/promo__eight.jpg
+WARNING:django.request:Not Found: /images/promo__one.jpg
+WARNING:django.request:Not Found: /images/promo__two.jpg
+WARNING:django.request:Not Found: /images/promo__three.jpg
+WARNING:django.request:Not Found: /images/promo__five.jpg
+WARNING:django.request:Not Found: /images/promo__four.jpg
+WARNING:django.request:Not Found: /images/promo__eight.jpg
+WARNING:django.request:Not Found: /images/promo__six.jpg
+WARNING:django.request:Not Found: /images/promo__seven.jpg
+WARNING:django.request:Not Found: /images/promo__nine.jpg
+WARNING:django.request:Not Found: /images/promo__five.jpg
+WARNING:django.request:Not Found: /images/promo__three.jpg
+WARNING:django.request:Not Found: /images/promo__four.jpg
+WARNING:django.request:Not Found: /images/promo__two.jpg
+WARNING:django.request:Not Found: /images/promo__one.jpg
+WARNING:django.request:Not Found: /images/promo__six.jpg
+WARNING:django.request:Not Found: /images/promo__seven.jpg
+WARNING:django.request:Not Found: /images/promo__nine.jpg
+WARNING:django.request:Not Found: /images/promo__eight.jpg
+WARNING:django.request:Not Found: /images/promo__one.jpg
+WARNING:django.request:Not Found: /images/promo__four.jpg
+WARNING:django.request:Not Found: /images/promo__three.jpg
+WARNING:django.request:Not Found: /images/promo__five.jpg
+WARNING:django.request:Not Found: /images/promo__two.jpg
+WARNING:django.request:Not Found: /images/promo__six.jpg
+WARNING:django.request:Not Found: /images/promo__seven.jpg
+WARNING:django.request:Not Found: /images/promo__eight.jpg
+WARNING:django.request:Not Found: /images/promo__nine.jpg
+WARNING:django.request:Not Found: /images/promo__one.jpg
+WARNING:django.request:Not Found: /images/promo__three.jpg
+WARNING:django.request:Not Found: /images/promo__eight.jpg
+WARNING:django.request:Not Found: /images/promo__four.jpg
+WARNING:django.request:Not Found: /images/promo__five.jpg
+WARNING:django.request:Not Found: /images/promo__six.jpg
+WARNING:django.request:Not Found: /images/promo__two.jpg
+WARNING:django.request:Not Found: /images/promo__seven.jpg
+WARNING:django.request:Not Found: /images/promo__nine.jpg
+WARNING:django.request:Not Found: /images/promo__two.jpg
+WARNING:django.request:Not Found: /images/promo__one.jpg
+WARNING:django.request:Not Found: /images/promo__three.jpg
+WARNING:django.request:Not Found: /images/promo__five.jpg
+WARNING:django.request:Not Found: /images/promo__four.jpg
+WARNING:django.request:Not Found: /images/promo__six.jpg
+WARNING:django.request:Not Found: /images/promo__seven.jpg
+WARNING:django.request:Not Found: /images/promo__nine.jpg
+WARNING:django.request:Not Found: /images/promo__eight.jpg
+WARNING:django.request:Not Found: /images/promo__four.jpg
+WARNING:django.request:Not Found: /images/promo__five.jpg
+WARNING:django.request:Not Found: /img/promo__one.png
+WARNING:django.request:Not Found: /images/promo__two.jpg
+WARNING:django.request:Not Found: /images/promo__three.jpg
+WARNING:django.request:Not Found: /images/promo__three.jpg
+WARNING:django.request:Not Found: /images/promo__four.jpg
+WARNING:django.request:Not Found: /img/promo__one.jpg
+WARNING:django.request:Not Found: /images/promo__two.jpg
+WARNING:django.request:Not Found: /images/promo__five.jpg
+WARNING:django.request:Not Found: /images/promo__four.jpg
+WARNING:django.request:Not Found: /images/promo__five.jpg
+WARNING:django.request:Not Found: /img/promo__one.jpg
+WARNING:django.request:Not Found: /images/promo__two.jpg
+WARNING:django.request:Not Found: /images/promo__three.jpg
+WARNING:django.request:Not Found: /images/promo__four.jpg
+WARNING:django.request:Not Found: /images/promo__five.jpg
+WARNING:django.request:Not Found: /images/promo__three.jpg
+WARNING:django.request:Not Found: /images/promo__two.jpg
+WARNING:django.request:Not Found: /images/promo__four.jpg
+WARNING:django.request:Not Found: /images/promo__two.jpg
+WARNING:django.request:Not Found: /images/promo__three.jpg
+WARNING:django.request:Not Found: /images/promo__five.jpg
+WARNING:django.request:Not Found: /img/promo__one.jpg
+WARNING:django.request:Not Found: /images/promo__two.jpg
+WARNING:django.request:Not Found: /images/promo__three.jpg
+WARNING:django.request:Not Found: /images/promo__four.jpg
+WARNING:django.request:Not Found: /images/promo__five.jpg
+WARNING:django.request:Not Found: /img/promo__one.jpg
+WARNING:django.request:Not Found: /images/promo__three.jpg
+WARNING:django.request:Not Found: /images/promo__four.jpg
+WARNING:django.request:Not Found: /images/promo__two.jpg
+WARNING:django.request:Not Found: /images/promo__five.jpg
+WARNING:django.request:Not Found: /images/promo__two.jpg
+WARNING:django.request:Not Found: /images/promo__four.jpg
+WARNING:django.request:Not Found: /images/promo__three.jpg
+WARNING:django.request:Not Found: /images/promo__five.jpg
+WARNING:django.request:Not Found: /images/promo__three.jpg
+WARNING:django.request:Not Found: /images/promo__five.jpg
+WARNING:django.request:Not Found: /images/promo__two.jpg
+WARNING:django.request:Not Found: /images/promo__four.jpg
+ERROR:django.request:Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\diploma\eva\ui\views.py", line 58, in index
+    return render(request, "ui/index.html", context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\backends\django.py", line 62, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\loader_tags.py", line 132, in render
+    compiled_parent = self.get_parent(context)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\loader_tags.py", line 129, in get_parent
+    return self.find_template(parent, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\loader_tags.py", line 107, in find_template
+    template, origin = context.template.engine.find_template(
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 200, in compile_nodelist
+    return parser.parse()
+           ^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\loader_tags.py", line 232, in do_block
+    nodelist = parser.parse(("endblock",))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 518, in parse
+    self.unclosed_block_tag(parse_until)
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 581, in unclosed_block_tag
+    raise self.error(token, msg)
+django.template.exceptions.TemplateSyntaxError: Unclosed tag on line 88: 'block'. Looking for one of: endblock.
+ERROR:django.request:Internal Server Error: /api/1/wav/1
+Traceback (most recent call last):
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\views\decorators\http.py", line 43, in inner
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\diploma\eva\backend\views.py", line 55, in process_wav
+    user_answer = wav_to_text(wav_filename)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\diploma\eva\backend\kaldi_utils.py", line 30, in wav_to_text
+    res = asyncio.run(async_wav_to_text(wav_path))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py", line 190, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 653, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "D:\diploma\eva\backend\kaldi_utils.py", line 10, in async_wav_to_text
+    async with websockets.connect(KALDI_URI) as websocket:
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\websockets\legacy\client.py", line 642, in __aenter__
+    return await self
+           ^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\websockets\legacy\client.py", line 659, in __await_impl_timeout__
+    return await asyncio.wait_for(self.__await_impl__(), self.open_timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\tasks.py", line 479, in wait_for
+    return fut.result()
+           ^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\websockets\legacy\client.py", line 663, in __await_impl__
+    _transport, _protocol = await self._create_connection()
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 1084, in create_connection
+    raise exceptions[0]
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 1063, in create_connection
+    sock = await self._connect_sock(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 967, in _connect_sock
+    await self.sock_connect(sock, address)
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\proactor_events.py", line 726, in sock_connect
+    return await self._proactor.connect(sock, address)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\windows_events.py", line 841, in _poll
+    value = callback(transferred, key, ov)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\windows_events.py", line 628, in finish_connect
+    ov.getresult()
+ConnectionRefusedError: [WinError 1225] Удаленный компьютер отклонил это сетевое подключение
+ERROR:django.request:Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\diploma\eva\ui\views.py", line 58, in index
+    return render(request, "ui/index.html", context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\backends\django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 200, in compile_nodelist
+    return parser.parse()
+           ^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\loader_tags.py", line 293, in do_extends
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\loader_tags.py", line 232, in do_block
+    nodelist = parser.parse(("endblock",))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\defaulttags.py", line 968, in do_if
+    nodelist = parser.parse(("endif",))
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\templatetags\static.py", line 171, in do_static
+    return StaticNode.handle_token(parser, token)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\templatetags\static.py", line 145, in handle_token
+    path = parser.compile_filter(bits[1])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 600, in compile_filter
+    return FilterExpression(token, self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 703, in __init__
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '`ui/img/promo__one.jpg`' from '`ui/img/promo__one.jpg`'
+WARNING:django.request:Not Found: /img/promo__two.jpg
+WARNING:django.request:Not Found: /img/promo__two.jpg
+WARNING:django.request:Not Found: /img/promo__two.jpg
+ERROR:django.request:Internal Server Error: /login/
+Traceback (most recent call last):
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 505, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'static'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\diploma\eva\ui\views.py", line 47, in Login
+    return render(request, "login.html")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\backends\django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 200, in compile_nodelist
+    return parser.parse()
+           ^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\loader_tags.py", line 293, in do_extends
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\loader_tags.py", line 232, in do_block
+    nodelist = parser.parse(("endblock",))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 507, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 558, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 32: 'static', expected 'endblock'. Did you forget to register or load this tag?
+ERROR:django.request:Internal Server Error: /login/
+Traceback (most recent call last):
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\utils\datastructures.py", line 84, in __getitem__
+    list_ = super().__getitem__(key)
+            ^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'username'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\diploma\eva\ui\views.py", line 37, in Login
+    username = request.POST['username']
+               ~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\utils\datastructures.py", line 86, in __getitem__
+    raise MultiValueDictKeyError(key)
+django.utils.datastructures.MultiValueDictKeyError: 'username'
+ERROR:django.request:Internal Server Error: /api/1/wav/1
+Traceback (most recent call last):
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\views\decorators\http.py", line 43, in inner
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\diploma\eva\backend\views.py", line 55, in process_wav
+    user_answer = wav_to_text(wav_filename)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\diploma\eva\backend\kaldi_utils.py", line 30, in wav_to_text
+    res = asyncio.run(async_wav_to_text(wav_path))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py", line 190, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 653, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "D:\diploma\eva\backend\kaldi_utils.py", line 10, in async_wav_to_text
+    async with websockets.connect(KALDI_URI) as websocket:
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\websockets\legacy\client.py", line 642, in __aenter__
+    return await self
+           ^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\websockets\legacy\client.py", line 659, in __await_impl_timeout__
+    return await asyncio.wait_for(self.__await_impl__(), self.open_timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\tasks.py", line 479, in wait_for
+    return fut.result()
+           ^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\websockets\legacy\client.py", line 663, in __await_impl__
+    _transport, _protocol = await self._create_connection()
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 1084, in create_connection
+    raise exceptions[0]
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 1063, in create_connection
+    sock = await self._connect_sock(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 967, in _connect_sock
+    await self.sock_connect(sock, address)
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\proactor_events.py", line 726, in sock_connect
+    return await self._proactor.connect(sock, address)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\windows_events.py", line 841, in _poll
+    value = callback(transferred, key, ov)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\windows_events.py", line 628, in finish_connect
+    ov.getresult()
+ConnectionRefusedError: [WinError 1225] Удаленный компьютер отклонил это сетевое подключение
+ERROR:django.request:Internal Server Error: /api/1/wav/1
+Traceback (most recent call last):
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\views\decorators\http.py", line 43, in inner
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\diploma\eva\backend\views.py", line 55, in process_wav
+    user_answer = wav_to_text(wav_filename)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\diploma\eva\backend\kaldi_utils.py", line 30, in wav_to_text
+    res = asyncio.run(async_wav_to_text(wav_path))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py", line 190, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 653, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "D:\diploma\eva\backend\kaldi_utils.py", line 10, in async_wav_to_text
+    async with websockets.connect(KALDI_URI) as websocket:
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\websockets\legacy\client.py", line 642, in __aenter__
+    return await self
+           ^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\websockets\legacy\client.py", line 659, in __await_impl_timeout__
+    return await asyncio.wait_for(self.__await_impl__(), self.open_timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\tasks.py", line 479, in wait_for
+    return fut.result()
+           ^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\websockets\legacy\client.py", line 663, in __await_impl__
+    _transport, _protocol = await self._create_connection()
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 1084, in create_connection
+    raise exceptions[0]
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 1063, in create_connection
+    sock = await self._connect_sock(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 967, in _connect_sock
+    await self.sock_connect(sock, address)
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\proactor_events.py", line 726, in sock_connect
+    return await self._proactor.connect(sock, address)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\windows_events.py", line 841, in _poll
+    value = callback(transferred, key, ov)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\windows_events.py", line 628, in finish_connect
+    ov.getresult()
+ConnectionRefusedError: [WinError 1225] Удаленный компьютер отклонил это сетевое подключение
+ERROR:django.request:Internal Server Error: /api/1/wav/2
+Traceback (most recent call last):
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\views\decorators\http.py", line 43, in inner
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\diploma\eva\backend\views.py", line 55, in process_wav
+    user_answer = wav_to_text(wav_filename)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\diploma\eva\backend\kaldi_utils.py", line 30, in wav_to_text
+    res = asyncio.run(async_wav_to_text(wav_path))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py", line 190, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 653, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "D:\diploma\eva\backend\kaldi_utils.py", line 10, in async_wav_to_text
+    async with websockets.connect(KALDI_URI) as websocket:
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\websockets\legacy\client.py", line 642, in __aenter__
+    return await self
+           ^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\websockets\legacy\client.py", line 659, in __await_impl_timeout__
+    return await asyncio.wait_for(self.__await_impl__(), self.open_timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\tasks.py", line 479, in wait_for
+    return fut.result()
+           ^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\websockets\legacy\client.py", line 663, in __await_impl__
+    _transport, _protocol = await self._create_connection()
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 1084, in create_connection
+    raise exceptions[0]
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 1063, in create_connection
+    sock = await self._connect_sock(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 967, in _connect_sock
+    await self.sock_connect(sock, address)
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\proactor_events.py", line 726, in sock_connect
+    return await self._proactor.connect(sock, address)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\windows_events.py", line 841, in _poll
+    value = callback(transferred, key, ov)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\windows_events.py", line 628, in finish_connect
+    ov.getresult()
+ConnectionRefusedError: [WinError 1225] Удаленный компьютер отклонил это сетевое подключение
+ERROR:django.request:Internal Server Error: /api/1/wav/3
+Traceback (most recent call last):
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\views\decorators\http.py", line 43, in inner
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\diploma\eva\backend\views.py", line 55, in process_wav
+    user_answer = wav_to_text(wav_filename)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\diploma\eva\backend\kaldi_utils.py", line 30, in wav_to_text
+    res = asyncio.run(async_wav_to_text(wav_path))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py", line 190, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 653, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "D:\diploma\eva\backend\kaldi_utils.py", line 10, in async_wav_to_text
+    async with websockets.connect(KALDI_URI) as websocket:
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\websockets\legacy\client.py", line 642, in __aenter__
+    return await self
+           ^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\websockets\legacy\client.py", line 659, in __await_impl_timeout__
+    return await asyncio.wait_for(self.__await_impl__(), self.open_timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\tasks.py", line 479, in wait_for
+    return fut.result()
+           ^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\websockets\legacy\client.py", line 663, in __await_impl__
+    _transport, _protocol = await self._create_connection()
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 1084, in create_connection
+    raise exceptions[0]
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 1063, in create_connection
+    sock = await self._connect_sock(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 967, in _connect_sock
+    await self.sock_connect(sock, address)
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\proactor_events.py", line 726, in sock_connect
+    return await self._proactor.connect(sock, address)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\windows_events.py", line 841, in _poll
+    value = callback(transferred, key, ov)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\windows_events.py", line 628, in finish_connect
+    ov.getresult()
+ConnectionRefusedError: [WinError 1225] Удаленный компьютер отклонил это сетевое подключение
+ERROR:django.request:Internal Server Error: /api/1/wav/3
+Traceback (most recent call last):
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\views\decorators\http.py", line 43, in inner
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\diploma\eva\backend\views.py", line 55, in process_wav
+    user_answer = wav_to_text(wav_filename)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\diploma\eva\backend\kaldi_utils.py", line 30, in wav_to_text
+    res = asyncio.run(async_wav_to_text(wav_path))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py", line 190, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 653, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "D:\diploma\eva\backend\kaldi_utils.py", line 10, in async_wav_to_text
+    async with websockets.connect(KALDI_URI) as websocket:
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\websockets\legacy\client.py", line 642, in __aenter__
+    return await self
+           ^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\websockets\legacy\client.py", line 659, in __await_impl_timeout__
+    return await asyncio.wait_for(self.__await_impl__(), self.open_timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\tasks.py", line 479, in wait_for
+    return fut.result()
+           ^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\websockets\legacy\client.py", line 663, in __await_impl__
+    _transport, _protocol = await self._create_connection()
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 1084, in create_connection
+    raise exceptions[0]
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 1063, in create_connection
+    sock = await self._connect_sock(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 967, in _connect_sock
+    await self.sock_connect(sock, address)
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\proactor_events.py", line 726, in sock_connect
+    return await self._proactor.connect(sock, address)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\windows_events.py", line 841, in _poll
+    value = callback(transferred, key, ov)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\windows_events.py", line 628, in finish_connect
+    ov.getresult()
+ConnectionRefusedError: [WinError 1225] Удаленный компьютер отклонил это сетевое подключение
+ERROR:django.request:Internal Server Error: /api/1/wav/3
+Traceback (most recent call last):
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\views\decorators\http.py", line 43, in inner
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\diploma\eva\backend\views.py", line 55, in process_wav
+    user_answer = wav_to_text(wav_filename)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\diploma\eva\backend\kaldi_utils.py", line 30, in wav_to_text
+    res = asyncio.run(async_wav_to_text(wav_path))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py", line 190, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 653, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "D:\diploma\eva\backend\kaldi_utils.py", line 10, in async_wav_to_text
+    async with websockets.connect(KALDI_URI) as websocket:
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\websockets\legacy\client.py", line 642, in __aenter__
+    return await self
+           ^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\websockets\legacy\client.py", line 659, in __await_impl_timeout__
+    return await asyncio.wait_for(self.__await_impl__(), self.open_timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\tasks.py", line 479, in wait_for
+    return fut.result()
+           ^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\websockets\legacy\client.py", line 663, in __await_impl__
+    _transport, _protocol = await self._create_connection()
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 1084, in create_connection
+    raise exceptions[0]
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 1063, in create_connection
+    sock = await self._connect_sock(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 967, in _connect_sock
+    await self.sock_connect(sock, address)
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\proactor_events.py", line 726, in sock_connect
+    return await self._proactor.connect(sock, address)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\windows_events.py", line 841, in _poll
+    value = callback(transferred, key, ov)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\windows_events.py", line 628, in finish_connect
+    ov.getresult()
+ConnectionRefusedError: [WinError 1225] Удаленный компьютер отклонил это сетевое подключение
+ERROR:django.request:Internal Server Error: /api/1/wav/3
+Traceback (most recent call last):
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\views\decorators\http.py", line 43, in inner
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\diploma\eva\backend\views.py", line 55, in process_wav
+    user_answer = wav_to_text(wav_filename)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\diploma\eva\backend\kaldi_utils.py", line 30, in wav_to_text
+    res = asyncio.run(async_wav_to_text(wav_path))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py", line 190, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 653, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "D:\diploma\eva\backend\kaldi_utils.py", line 10, in async_wav_to_text
+    async with websockets.connect(KALDI_URI) as websocket:
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\websockets\legacy\client.py", line 642, in __aenter__
+    return await self
+           ^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\websockets\legacy\client.py", line 659, in __await_impl_timeout__
+    return await asyncio.wait_for(self.__await_impl__(), self.open_timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\tasks.py", line 479, in wait_for
+    return fut.result()
+           ^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\websockets\legacy\client.py", line 663, in __await_impl__
+    _transport, _protocol = await self._create_connection()
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 1084, in create_connection
+    raise exceptions[0]
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 1063, in create_connection
+    sock = await self._connect_sock(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 967, in _connect_sock
+    await self.sock_connect(sock, address)
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\proactor_events.py", line 726, in sock_connect
+    return await self._proactor.connect(sock, address)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\windows_events.py", line 841, in _poll
+    value = callback(transferred, key, ov)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\windows_events.py", line 628, in finish_connect
+    ov.getresult()
+ConnectionRefusedError: [WinError 1225] Удаленный компьютер отклонил это сетевое подключение
+ERROR:django.request:Internal Server Error: /api/1/wav/1
+Traceback (most recent call last):
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\views\decorators\http.py", line 43, in inner
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\diploma\eva\backend\views.py", line 55, in process_wav
+    user_answer = wav_to_text(wav_filename)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\diploma\eva\backend\kaldi_utils.py", line 30, in wav_to_text
+    res = asyncio.run(async_wav_to_text(wav_path))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py", line 190, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 653, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "D:\diploma\eva\backend\kaldi_utils.py", line 10, in async_wav_to_text
+    async with websockets.connect(KALDI_URI) as websocket:
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\websockets\legacy\client.py", line 642, in __aenter__
+    return await self
+           ^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\websockets\legacy\client.py", line 659, in __await_impl_timeout__
+    return await asyncio.wait_for(self.__await_impl__(), self.open_timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\tasks.py", line 479, in wait_for
+    return fut.result()
+           ^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\websockets\legacy\client.py", line 663, in __await_impl__
+    _transport, _protocol = await self._create_connection()
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 1084, in create_connection
+    raise exceptions[0]
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 1063, in create_connection
+    sock = await self._connect_sock(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 967, in _connect_sock
+    await self.sock_connect(sock, address)
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\proactor_events.py", line 726, in sock_connect
+    return await self._proactor.connect(sock, address)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\windows_events.py", line 841, in _poll
+    value = callback(transferred, key, ov)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\windows_events.py", line 628, in finish_connect
+    ov.getresult()
+ConnectionRefusedError: [WinError 1225] Удаленный компьютер отклонил это сетевое подключение
+ERROR:django.request:Internal Server Error: /api/1/wav/1
+Traceback (most recent call last):
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\views\decorators\http.py", line 43, in inner
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\diploma\eva\backend\views.py", line 55, in process_wav
+    user_answer = wav_to_text(wav_filename)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\diploma\eva\backend\kaldi_utils.py", line 30, in wav_to_text
+    res = asyncio.run(async_wav_to_text(wav_path))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py", line 190, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 653, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "D:\diploma\eva\backend\kaldi_utils.py", line 10, in async_wav_to_text
+    async with websockets.connect(KALDI_URI) as websocket:
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\websockets\legacy\client.py", line 642, in __aenter__
+    return await self
+           ^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\websockets\legacy\client.py", line 659, in __await_impl_timeout__
+    return await asyncio.wait_for(self.__await_impl__(), self.open_timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\tasks.py", line 479, in wait_for
+    return fut.result()
+           ^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\websockets\legacy\client.py", line 663, in __await_impl__
+    _transport, _protocol = await self._create_connection()
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 1084, in create_connection
+    raise exceptions[0]
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 1063, in create_connection
+    sock = await self._connect_sock(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 967, in _connect_sock
+    await self.sock_connect(sock, address)
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\proactor_events.py", line 726, in sock_connect
+    return await self._proactor.connect(sock, address)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\windows_events.py", line 841, in _poll
+    value = callback(transferred, key, ov)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\windows_events.py", line 628, in finish_connect
+    ov.getresult()
+ConnectionRefusedError: [WinError 1225] Удаленный компьютер отклонил это сетевое подключение
+ERROR:django.request:Internal Server Error: /api/1/wav/1
+Traceback (most recent call last):
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\views\decorators\http.py", line 43, in inner
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\diploma\eva\backend\views.py", line 55, in process_wav
+    user_answer = wav_to_text(wav_filename)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\diploma\eva\backend\kaldi_utils.py", line 30, in wav_to_text
+    res = asyncio.run(async_wav_to_text(wav_path))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py", line 190, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 653, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "D:\diploma\eva\backend\kaldi_utils.py", line 10, in async_wav_to_text
+    async with websockets.connect(KALDI_URI) as websocket:
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\websockets\legacy\client.py", line 642, in __aenter__
+    return await self
+           ^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\websockets\legacy\client.py", line 659, in __await_impl_timeout__
+    return await asyncio.wait_for(self.__await_impl__(), self.open_timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\tasks.py", line 479, in wait_for
+    return fut.result()
+           ^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\websockets\legacy\client.py", line 663, in __await_impl__
+    _transport, _protocol = await self._create_connection()
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 1084, in create_connection
+    raise exceptions[0]
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 1063, in create_connection
+    sock = await self._connect_sock(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 967, in _connect_sock
+    await self.sock_connect(sock, address)
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\proactor_events.py", line 726, in sock_connect
+    return await self._proactor.connect(sock, address)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\windows_events.py", line 841, in _poll
+    value = callback(transferred, key, ov)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\windows_events.py", line 628, in finish_connect
+    ov.getresult()
+ConnectionRefusedError: [WinError 1225] Удаленный компьютер отклонил это сетевое подключение
+ERROR:django.request:Internal Server Error: /api/1/wav/1
+Traceback (most recent call last):
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\views\decorators\http.py", line 43, in inner
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\diploma\eva\backend\views.py", line 55, in process_wav
+    user_answer = wav_to_text(wav_filename)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\diploma\eva\backend\kaldi_utils.py", line 30, in wav_to_text
+    res = asyncio.run(async_wav_to_text(wav_path))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py", line 190, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 653, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "D:\diploma\eva\backend\kaldi_utils.py", line 10, in async_wav_to_text
+    async with websockets.connect(KALDI_URI) as websocket:
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\websockets\legacy\client.py", line 642, in __aenter__
+    return await self
+           ^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\websockets\legacy\client.py", line 659, in __await_impl_timeout__
+    return await asyncio.wait_for(self.__await_impl__(), self.open_timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\tasks.py", line 479, in wait_for
+    return fut.result()
+           ^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\websockets\legacy\client.py", line 663, in __await_impl__
+    _transport, _protocol = await self._create_connection()
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 1084, in create_connection
+    raise exceptions[0]
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 1063, in create_connection
+    sock = await self._connect_sock(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 967, in _connect_sock
+    await self.sock_connect(sock, address)
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\proactor_events.py", line 726, in sock_connect
+    return await self._proactor.connect(sock, address)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\windows_events.py", line 841, in _poll
+    value = callback(transferred, key, ov)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\windows_events.py", line 628, in finish_connect
+    ov.getresult()
+ConnectionRefusedError: [WinError 1225] Удаленный компьютер отклонил это сетевое подключение
+ERROR:django.request:Internal Server Error: /api/1/wav/1
+Traceback (most recent call last):
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\views\decorators\http.py", line 43, in inner
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\diploma\eva\backend\views.py", line 55, in process_wav
+    user_answer = wav_to_text(wav_filename)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\diploma\eva\backend\kaldi_utils.py", line 30, in wav_to_text
+    res = asyncio.run(async_wav_to_text(wav_path))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py", line 190, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 653, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "D:\diploma\eva\backend\kaldi_utils.py", line 10, in async_wav_to_text
+    async with websockets.connect(KALDI_URI) as websocket:
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\websockets\legacy\client.py", line 642, in __aenter__
+    return await self
+           ^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\websockets\legacy\client.py", line 659, in __await_impl_timeout__
+    return await asyncio.wait_for(self.__await_impl__(), self.open_timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\tasks.py", line 479, in wait_for
+    return fut.result()
+           ^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\websockets\legacy\client.py", line 663, in __await_impl__
+    _transport, _protocol = await self._create_connection()
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 1084, in create_connection
+    raise exceptions[0]
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 1063, in create_connection
+    sock = await self._connect_sock(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 967, in _connect_sock
+    await self.sock_connect(sock, address)
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\proactor_events.py", line 726, in sock_connect
+    return await self._proactor.connect(sock, address)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\windows_events.py", line 841, in _poll
+    value = callback(transferred, key, ov)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\windows_events.py", line 628, in finish_connect
+    ov.getresult()
+ConnectionRefusedError: [WinError 1225] Удаленный компьютер отклонил это сетевое подключение
+ERROR:django.request:Internal Server Error: /api/1/wav/1
+Traceback (most recent call last):
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\views\decorators\http.py", line 43, in inner
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\diploma\eva\backend\views.py", line 55, in process_wav
+    user_answer = wav_to_text(wav_filename)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\diploma\eva\backend\kaldi_utils.py", line 30, in wav_to_text
+    res = asyncio.run(async_wav_to_text(wav_path))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py", line 190, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 653, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "D:\diploma\eva\backend\kaldi_utils.py", line 10, in async_wav_to_text
+    async with websockets.connect(KALDI_URI) as websocket:
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\websockets\legacy\client.py", line 642, in __aenter__
+    return await self
+           ^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\websockets\legacy\client.py", line 659, in __await_impl_timeout__
+    return await asyncio.wait_for(self.__await_impl__(), self.open_timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\tasks.py", line 479, in wait_for
+    return fut.result()
+           ^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\websockets\legacy\client.py", line 663, in __await_impl__
+    _transport, _protocol = await self._create_connection()
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 1084, in create_connection
+    raise exceptions[0]
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 1063, in create_connection
+    sock = await self._connect_sock(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 967, in _connect_sock
+    await self.sock_connect(sock, address)
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\proactor_events.py", line 726, in sock_connect
+    return await self._proactor.connect(sock, address)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\windows_events.py", line 841, in _poll
+    value = callback(transferred, key, ov)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\windows_events.py", line 628, in finish_connect
+    ov.getresult()
+ConnectionRefusedError: [WinError 1225] Удаленный компьютер отклонил это сетевое подключение
+ERROR:django.request:Internal Server Error: /api/1/wav/1
+Traceback (most recent call last):
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\views\decorators\http.py", line 43, in inner
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\diploma\eva\backend\views.py", line 55, in process_wav
+    user_answer = wav_to_text(wav_filename)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\diploma\eva\backend\kaldi_utils.py", line 30, in wav_to_text
+    res = asyncio.run(async_wav_to_text(wav_path))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py", line 190, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 653, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "D:\diploma\eva\backend\kaldi_utils.py", line 10, in async_wav_to_text
+    async with websockets.connect(KALDI_URI) as websocket:
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\websockets\legacy\client.py", line 642, in __aenter__
+    return await self
+           ^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\websockets\legacy\client.py", line 659, in __await_impl_timeout__
+    return await asyncio.wait_for(self.__await_impl__(), self.open_timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\tasks.py", line 479, in wait_for
+    return fut.result()
+           ^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\websockets\legacy\client.py", line 663, in __await_impl__
+    _transport, _protocol = await self._create_connection()
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 1084, in create_connection
+    raise exceptions[0]
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 1063, in create_connection
+    sock = await self._connect_sock(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 967, in _connect_sock
+    await self.sock_connect(sock, address)
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\proactor_events.py", line 726, in sock_connect
+    return await self._proactor.connect(sock, address)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\windows_events.py", line 841, in _poll
+    value = callback(transferred, key, ov)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\windows_events.py", line 628, in finish_connect
+    ov.getresult()
+ConnectionRefusedError: [WinError 1225] Удаленный компьютер отклонил это сетевое подключение
+ERROR:django.request:Internal Server Error: /api/1/wav/1
+Traceback (most recent call last):
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\views\decorators\http.py", line 43, in inner
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\diploma\eva\backend\views.py", line 55, in process_wav
+    user_answer = wav_to_text(wav_filename)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\diploma\eva\backend\kaldi_utils.py", line 30, in wav_to_text
+    res = asyncio.run(async_wav_to_text(wav_path))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py", line 190, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 653, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "D:\diploma\eva\backend\kaldi_utils.py", line 10, in async_wav_to_text
+    async with websockets.connect(KALDI_URI) as websocket:
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\websockets\legacy\client.py", line 642, in __aenter__
+    return await self
+           ^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\websockets\legacy\client.py", line 659, in __await_impl_timeout__
+    return await asyncio.wait_for(self.__await_impl__(), self.open_timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\tasks.py", line 479, in wait_for
+    return fut.result()
+           ^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\websockets\legacy\client.py", line 663, in __await_impl__
+    _transport, _protocol = await self._create_connection()
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 1084, in create_connection
+    raise exceptions[0]
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 1063, in create_connection
+    sock = await self._connect_sock(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 967, in _connect_sock
+    await self.sock_connect(sock, address)
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\proactor_events.py", line 726, in sock_connect
+    return await self._proactor.connect(sock, address)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\windows_events.py", line 841, in _poll
+    value = callback(transferred, key, ov)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\windows_events.py", line 628, in finish_connect
+    ov.getresult()
+ConnectionRefusedError: [WinError 1225] Удаленный компьютер отклонил это сетевое подключение
+ERROR:django.request:Internal Server Error: /api/1/wav/1
+Traceback (most recent call last):
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\views\decorators\http.py", line 43, in inner
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\diploma\eva\backend\views.py", line 55, in process_wav
+    user_answer = wav_to_text(wav_filename)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\diploma\eva\backend\kaldi_utils.py", line 30, in wav_to_text
+    res = asyncio.run(async_wav_to_text(wav_path))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py", line 190, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 653, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "D:\diploma\eva\backend\kaldi_utils.py", line 10, in async_wav_to_text
+    async with websockets.connect(KALDI_URI) as websocket:
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\websockets\legacy\client.py", line 642, in __aenter__
+    return await self
+           ^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\websockets\legacy\client.py", line 659, in __await_impl_timeout__
+    return await asyncio.wait_for(self.__await_impl__(), self.open_timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\tasks.py", line 479, in wait_for
+    return fut.result()
+           ^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\websockets\legacy\client.py", line 663, in __await_impl__
+    _transport, _protocol = await self._create_connection()
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 1084, in create_connection
+    raise exceptions[0]
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 1063, in create_connection
+    sock = await self._connect_sock(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 967, in _connect_sock
+    await self.sock_connect(sock, address)
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\proactor_events.py", line 726, in sock_connect
+    return await self._proactor.connect(sock, address)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\windows_events.py", line 841, in _poll
+    value = callback(transferred, key, ov)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\windows_events.py", line 628, in finish_connect
+    ov.getresult()
+ConnectionRefusedError: [WinError 1225] Удаленный компьютер отклонил это сетевое подключение
+ERROR:django.request:Internal Server Error: /api/1/wav/1
+Traceback (most recent call last):
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\views\decorators\http.py", line 43, in inner
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\diploma\eva\backend\views.py", line 55, in process_wav
+    user_answer = wav_to_text(wav_filename)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\diploma\eva\backend\kaldi_utils.py", line 30, in wav_to_text
+    res = asyncio.run(async_wav_to_text(wav_path))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py", line 190, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 653, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "D:\diploma\eva\backend\kaldi_utils.py", line 10, in async_wav_to_text
+    async with websockets.connect(KALDI_URI) as websocket:
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\websockets\legacy\client.py", line 642, in __aenter__
+    return await self
+           ^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\websockets\legacy\client.py", line 659, in __await_impl_timeout__
+    return await asyncio.wait_for(self.__await_impl__(), self.open_timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\tasks.py", line 479, in wait_for
+    return fut.result()
+           ^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\websockets\legacy\client.py", line 663, in __await_impl__
+    _transport, _protocol = await self._create_connection()
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 1084, in create_connection
+    raise exceptions[0]
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 1063, in create_connection
+    sock = await self._connect_sock(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 967, in _connect_sock
+    await self.sock_connect(sock, address)
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\proactor_events.py", line 726, in sock_connect
+    return await self._proactor.connect(sock, address)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\windows_events.py", line 841, in _poll
+    value = callback(transferred, key, ov)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\windows_events.py", line 628, in finish_connect
+    ov.getresult()
+ConnectionRefusedError: [WinError 1225] Удаленный компьютер отклонил это сетевое подключение
+ERROR:django.request:Internal Server Error: /api/1/wav/1
+Traceback (most recent call last):
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\views\decorators\http.py", line 43, in inner
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\diploma\eva\backend\views.py", line 55, in process_wav
+    user_answer = wav_to_text(wav_filename)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\diploma\eva\backend\kaldi_utils.py", line 30, in wav_to_text
+    res = asyncio.run(async_wav_to_text(wav_path))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py", line 190, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 653, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "D:\diploma\eva\backend\kaldi_utils.py", line 10, in async_wav_to_text
+    async with websockets.connect(KALDI_URI) as websocket:
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\websockets\legacy\client.py", line 642, in __aenter__
+    return await self
+           ^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\websockets\legacy\client.py", line 659, in __await_impl_timeout__
+    return await asyncio.wait_for(self.__await_impl__(), self.open_timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\tasks.py", line 479, in wait_for
+    return fut.result()
+           ^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\websockets\legacy\client.py", line 663, in __await_impl__
+    _transport, _protocol = await self._create_connection()
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 1084, in create_connection
+    raise exceptions[0]
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 1063, in create_connection
+    sock = await self._connect_sock(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 967, in _connect_sock
+    await self.sock_connect(sock, address)
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\proactor_events.py", line 726, in sock_connect
+    return await self._proactor.connect(sock, address)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\windows_events.py", line 841, in _poll
+    value = callback(transferred, key, ov)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\windows_events.py", line 628, in finish_connect
+    ov.getresult()
+ConnectionRefusedError: [WinError 1225] Удаленный компьютер отклонил это сетевое подключение
+ERROR:django.request:Internal Server Error: /api/1/wav/1
+Traceback (most recent call last):
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\views\decorators\http.py", line 43, in inner
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\diploma\eva\backend\views.py", line 55, in process_wav
+    user_answer = wav_to_text(wav_filename)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\diploma\eva\backend\kaldi_utils.py", line 30, in wav_to_text
+    res = asyncio.run(async_wav_to_text(wav_path))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py", line 190, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 653, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "D:\diploma\eva\backend\kaldi_utils.py", line 10, in async_wav_to_text
+    async with websockets.connect(KALDI_URI) as websocket:
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\websockets\legacy\client.py", line 642, in __aenter__
+    return await self
+           ^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\websockets\legacy\client.py", line 659, in __await_impl_timeout__
+    return await asyncio.wait_for(self.__await_impl__(), self.open_timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\tasks.py", line 479, in wait_for
+    return fut.result()
+           ^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\websockets\legacy\client.py", line 663, in __await_impl__
+    _transport, _protocol = await self._create_connection()
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 1084, in create_connection
+    raise exceptions[0]
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 1063, in create_connection
+    sock = await self._connect_sock(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 967, in _connect_sock
+    await self.sock_connect(sock, address)
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\proactor_events.py", line 726, in sock_connect
+    return await self._proactor.connect(sock, address)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\windows_events.py", line 841, in _poll
+    value = callback(transferred, key, ov)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\windows_events.py", line 628, in finish_connect
+    ov.getresult()
+ConnectionRefusedError: [WinError 1225] Удаленный компьютер отклонил это сетевое подключение
+ERROR:django.request:Internal Server Error: /api/1/wav/1
+Traceback (most recent call last):
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\views\decorators\http.py", line 43, in inner
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\diploma\eva\backend\views.py", line 55, in process_wav
+    user_answer = wav_to_text(wav_filename)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\diploma\eva\backend\kaldi_utils.py", line 30, in wav_to_text
+    res = asyncio.run(async_wav_to_text(wav_path))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py", line 190, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 653, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "D:\diploma\eva\backend\kaldi_utils.py", line 10, in async_wav_to_text
+    async with websockets.connect(KALDI_URI) as websocket:
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\websockets\legacy\client.py", line 642, in __aenter__
+    return await self
+           ^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\websockets\legacy\client.py", line 659, in __await_impl_timeout__
+    return await asyncio.wait_for(self.__await_impl__(), self.open_timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\tasks.py", line 479, in wait_for
+    return fut.result()
+           ^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\websockets\legacy\client.py", line 663, in __await_impl__
+    _transport, _protocol = await self._create_connection()
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 1084, in create_connection
+    raise exceptions[0]
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 1063, in create_connection
+    sock = await self._connect_sock(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 967, in _connect_sock
+    await self.sock_connect(sock, address)
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\proactor_events.py", line 726, in sock_connect
+    return await self._proactor.connect(sock, address)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\windows_events.py", line 841, in _poll
+    value = callback(transferred, key, ov)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\windows_events.py", line 628, in finish_connect
+    ov.getresult()
+ConnectionRefusedError: [WinError 1225] Удаленный компьютер отклонил это сетевое подключение
+ERROR:django.request:Internal Server Error: /api/1/wav/1
+Traceback (most recent call last):
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\views\decorators\http.py", line 43, in inner
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\diploma\eva\backend\views.py", line 55, in process_wav
+    user_answer = wav_to_text(wav_filename)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\diploma\eva\backend\kaldi_utils.py", line 30, in wav_to_text
+    res = asyncio.run(async_wav_to_text(wav_path))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py", line 190, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 653, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "D:\diploma\eva\backend\kaldi_utils.py", line 10, in async_wav_to_text
+    async with websockets.connect(KALDI_URI) as websocket:
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\websockets\legacy\client.py", line 642, in __aenter__
+    return await self
+           ^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\websockets\legacy\client.py", line 659, in __await_impl_timeout__
+    return await asyncio.wait_for(self.__await_impl__(), self.open_timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\tasks.py", line 479, in wait_for
+    return fut.result()
+           ^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\websockets\legacy\client.py", line 663, in __await_impl__
+    _transport, _protocol = await self._create_connection()
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 1084, in create_connection
+    raise exceptions[0]
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 1063, in create_connection
+    sock = await self._connect_sock(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 967, in _connect_sock
+    await self.sock_connect(sock, address)
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\proactor_events.py", line 726, in sock_connect
+    return await self._proactor.connect(sock, address)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\windows_events.py", line 841, in _poll
+    value = callback(transferred, key, ov)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\windows_events.py", line 628, in finish_connect
+    ov.getresult()
+ConnectionRefusedError: [WinError 1225] Удаленный компьютер отклонил это сетевое подключение
+ERROR:django.request:Internal Server Error: /api/1/wav/1
+Traceback (most recent call last):
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\views\decorators\http.py", line 43, in inner
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\diploma\eva\backend\views.py", line 55, in process_wav
+    user_answer = wav_to_text(wav_filename)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\diploma\eva\backend\kaldi_utils.py", line 30, in wav_to_text
+    res = asyncio.run(async_wav_to_text(wav_path))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py", line 190, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 653, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "D:\diploma\eva\backend\kaldi_utils.py", line 10, in async_wav_to_text
+    async with websockets.connect(KALDI_URI) as websocket:
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\websockets\legacy\client.py", line 642, in __aenter__
+    return await self
+           ^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\websockets\legacy\client.py", line 659, in __await_impl_timeout__
+    return await asyncio.wait_for(self.__await_impl__(), self.open_timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\tasks.py", line 479, in wait_for
+    return fut.result()
+           ^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\site-packages\websockets\legacy\client.py", line 663, in __await_impl__
+    _transport, _protocol = await self._create_connection()
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 1084, in create_connection
+    raise exceptions[0]
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 1063, in create_connection
+    sock = await self._connect_sock(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 967, in _connect_sock
+    await self.sock_connect(sock, address)
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\proactor_events.py", line 726, in sock_connect
+    return await self._proactor.connect(sock, address)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\windows_events.py", line 841, in _poll
+    value = callback(transferred, key, ov)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\windows_events.py", line 628, in finish_connect
+    ov.getresult()
+ConnectionRefusedError: [WinError 1225] Удаленный компьютер отклонил это сетевое подключение

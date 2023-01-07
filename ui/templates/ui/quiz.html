@@ -4,59 +4,52 @@
 
 {% block body %}
 
-  <link rel="stylesheet" href="{% static 'ui/css/style.css' %}">
+
+
+<!-- <link rel="stylesheet" href="{% static 'ui/css/libs.min.css' %}">
+<link rel="stylesheet" href="{% static 'ui/css/style.min.css' %}"> -->
+<div class="sliderInnerBackground quizInnerBackground">
   <input type="hidden" id="question_id" name="variable" value="{{ question_id }}">
-
-  <div class="wrapper screen-height">
-    <div class="container">
-      <div class="jumbotron__inner">
-        <div class="jumbotron__inner-item">
-          {% block content %}
-          <h1>{{ question }}</h1>
-          <h3> question id: {{ question_id}}</h3>
-          {% endblock %}
-          <h4>Отвечайте в микрофон</h4>
-        </div>
-
-        <div class="jumbotron__inner-form">
-          <form name="recorder_form">
-            {% csrf_token %}
-            <button class="start-stop" type="button" id="start" >Запись</button>
-            <button class="pause-button" type="button" id="pause" >Пауза</button>
-            <button class="start-stop" type="button" id="stop" >Submit</button>
-          </form>
-        </div>
-
-        <div class="jumbotron__inner-item">
-          <br>
-          <br>
-          {% if page_obj.has_previous %}
-            <a class="btn btn-primary" href="{% url 'quiz' 1 page_obj.previous_page_number %}">
-                Previous Page
-            </a>
-          {% endif%}
-          {% if page_obj.has_next %}
-            <a class="btn btn-primary" href="{% url 'quiz' 1 page_obj.next_page_number %}">
-                Next Page
-            </a>
-          {% else %}
-              <a class="btn btn-primary" href="{% url 'results' 1 %}">
-                Results
-            </a>
-          {% endif%}
-        </div>
-      </div>
-
-
+  <div class="quizInner">
+    <div class="quizInnerItem">
+      {% block content %}
+      <h1>{{ question }}</h1>
+      <div> Вопрос №: {{ question_id}}</div>
+      {% endblock %}
+      <h4>Отвечайте в микрофон</h4>
     </div>
 
+    <form name="quizInnerForm">
+      {% csrf_token %}
+      <button class="start-stop" type="button" id="start">Запись</button>
+      <!-- <button class="pause-button" type="button" id="pause">Пауза</button> -->
+      <button class="start-stop" type="button" id="stop">Стоп</button>
+    </form>
 
+    <div class="quizInnerItem quizInnerBtn">
+      {% if page_obj.has_previous %}
+      <a class="btnPrev" href="{% url 'quiz' 1 page_obj.previous_page_number %}">
+        Назад
+      </a>
+      {% endif%}
+      {% if page_obj.has_next %}
+      <a class="btnNext nonvision" href="{% url 'quiz' 1 page_obj.next_page_number %}">
+        Далее
+      </a>
+      {% else %}
+      <a class="btnNext nonvision" href="{% url 'results' 1 %}">
+        Результат
+      </a>
+      {% endif%}
+    </div>
   </div>
+</div>
 {% endblock %}
 
 {% block js %}
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="{% static 'ui/js/recorder.js' %}"></script>
-  <script src="{% static 'ui/js/voice.js' %}"></script>
-  <script src="{% static 'ui/js/main.js' %}"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="{% static 'ui/js/recorder.js' %}"></script>
+<script src="{% static 'ui/js/voice.js' %}"></script>
+<script src="{% static 'ui/js/libs.min.js' %}"></script>
+<script src="{% static 'ui/js/main.js' %}"></script>
 {% endblock %}
