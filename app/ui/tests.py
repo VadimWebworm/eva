@@ -1,8 +1,8 @@
 from django.contrib.auth.models import User
 from django.test import TestCase, Client, RequestFactory
 
-from ui import views
-from ui.models import Quiz, Question
+from app.ui import views
+from app.ui.models import Quiz, Question
 
 
 class UiTestCase(TestCase):

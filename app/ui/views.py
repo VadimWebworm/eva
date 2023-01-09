@@ -5,7 +5,7 @@ from django.core.paginator import Paginator
 from django.shortcuts import render, redirect
 
 
-from ui.models import Quiz, Question, Answer
+from app.ui.models import Quiz, Answer
 
 
 def Signup(request):

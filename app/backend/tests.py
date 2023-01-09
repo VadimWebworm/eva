@@ -1,12 +1,9 @@
-import asyncio
-import json
-
 from django.contrib.auth.models import User
-from django.core.files.uploadedfile import InMemoryUploadedFile, SimpleUploadedFile
+from django.core.files.uploadedfile import InMemoryUploadedFile
 from django.test import TestCase, Client
 
-from backend.kaldi_utils import wav_to_text
-from ui.models import Quiz, Question
+from app.backend.kaldi_utils import wav_to_text
+from app.ui.models import Quiz, Question
 import wave
 
 TEST_FILE_PATH = 'wavs/test_1.wav'
