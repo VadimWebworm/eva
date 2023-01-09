@@ -52,16 +52,16 @@ def text_to_score(user_answer, true_answer):
 def process_wav(request, quiz_id, quest_id):
     wav_filename = save_wav_to_disk(request, quest_id)
     question = Question.objects.get(id=quest_id)
-    if os.getenv('STUB_EVA_SERVICES'):
-        user_answer = 'Сервис распознавания голоса отключен'
-        score = 0.01
-    else:
+    if os.getenv('USE_SERVICES'):
         file_wrapper = {'wav_file': open(wav_filename, 'rb')}
         r = requests.post(ASR_URL, files=file_wrapper)
         j_str = json.loads(r.text)
         user_answer = json.loads(j_str)['text']
         true_answer = question.true_answer
         score = text_to_score(user_answer, true_answer)
+    else:
+        user_answer = 'Сервисы распознавания голоса отключены'
+        score = 0.01
 
     answer = Answer(
         content=user_answer,
