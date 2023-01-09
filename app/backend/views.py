@@ -8,7 +8,7 @@ from django.http import JsonResponse
 from django.utils import timezone
 from django.views.decorators.http import require_POST
 
-from app.ui.models import Answer, Question
+from ui.models import Answer, Question
 
 logging.basicConfig(filename='logs/logs.log', level=logging.INFO)
 ASR_URL = 'http://asr:5005'

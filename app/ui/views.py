@@ -5,7 +5,7 @@ from django.core.paginator import Paginator
 from django.shortcuts import render, redirect
 
 
-from app.ui.models import Quiz, Answer
+from ui.models import Quiz, Answer
 
 
 def Signup(request):
@@ -16,7 +16,7 @@ def Signup(request):
         email = request.POST['email']
         first_name = request.POST['first_name']
         last_name = request.POST['last_name']
-        password = request.POST['password1']
+        password = request.POST['password']
         confirm_password = request.POST['password2']
 
         if password != confirm_password:
