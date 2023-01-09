@@ -13,12 +13,22 @@
 
 ## Запуск приложения
 
+1) Скачайте репозиторий  
 ```
-git clone https://github.com/labintsev/eva.git  
-python manage.py makemigrations  
-python manage.py migrate  
-python manage.py loaddata fixtures/data.json  
+git clone https://github.com/labintsev/eva.git
+```
+
+2.1) Запуск в режиме разработки UI  
+```
+cd app  
+pip install -r requirements.txt  
 python manage.py runserver 
+``` 
+
+2.2) Запуск в docker контейнерах вместе с сервисами распознавания голоса и текста  
+```
+docker-compose build  
+docker-compose up
 ``` 
 
 Откройте браузер по ссылке [localhost:8000](127.0.0.1:8000).
