@@ -2062,3 +2062,15 @@ Traceback (most recent call last):
   File "C:\Users\Gamer-PC\AppData\Local\Programs\Python\Python311\Lib\asyncio\windows_events.py", line 628, in finish_connect
     ov.getresult()
 ConnectionRefusedError: [WinError 1225] Удаленный компьютер отклонил это сетевое подключение
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico

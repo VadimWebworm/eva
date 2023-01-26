@@ -7,8 +7,9 @@ let input;
 let AudioContext = window.AudioContext || window.webkitAudioContext;
 let audioContext
 
-let recordButton = document.getElementById("start");
-let stopButton = document.querySelector('#stop');
+const recordButton = document.getElementById("start");
+const stopButton = document.querySelector('#stop');
+const soundClips = document.querySelector('.sound-clips');
 
 recordButton.addEventListener("click", startRecording);
 stopButton.addEventListener("click", stopRecording);
@@ -25,12 +26,15 @@ function startRecording() {
         rec = new Recorder(input, { numChannels: 1 })
         rec.record()
         console.log("Recording started");
-
+        if (document.querySelector('.clip')) {
+            document.querySelector('.clip').remove();
+        }
     })
 }
 
 function stopRecording() {
     console.log("stopButton clicked");
+
     rec.stop();
     gumStream.getAudioTracks()[0].stop();
     rec.exportWAV(createDownloadLink);
@@ -46,6 +50,19 @@ function createDownloadLink(blob) {
     let fd = new FormData();
     fd.append('voice', blob);
 
+    if (!document.querySelector('.clip')) {
+        // clipName = document.getElementById('question_id').value;
+        const clipContainer = document.createElement('article');
+        const audio = document.createElement('audio');
+
+        clipContainer.classList.add('clip');
+        audio.setAttribute('controls', '');
+
+        clipContainer.appendChild(audio);
+        soundClips.appendChild(clipContainer);
+        const audioURL = window.URL.createObjectURL(blob);
+        audio.src = audioURL;
+    }
     fetch("http://127.0.0.1:8000/api/1/wav/" + question_id.value, {
         credentials: 'include',
         mode: 'same-origin',

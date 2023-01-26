@@ -141,10 +141,13 @@ footer {
 }
 .promoSlider {
     position: relative;
+    min-height: 300px;
+    height: 100%;
 }
 .promoSliderWrapper {
     background-color: #130b08;
-    min-height: 700px;
+    min-height: 300px;
+    height: 100%;
     width: 100%;
     background-repeat: repeat;
     position: absolute;
@@ -184,8 +187,10 @@ footer {
 }
 
 // base end
-
 // index start
+// .screen-height{
+//     height: 100vh;
+// }
 .sliderBackgroundTitle {
     font-weight: 700;
     font-size: 40px;
@@ -197,7 +202,8 @@ footer {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    min-height: 700px;
+    min-height: 300px;
+    height: 100%;
     width: 100%;
     opacity: 0.4;
     // height: 401px;
@@ -390,6 +396,9 @@ button {
 }
 .quizInnerNonBtn{
     margin-bottom: 56px;
+}
+.sound-clips{
+    margin-bottom: 20px;
 }
 
 // quiz end
