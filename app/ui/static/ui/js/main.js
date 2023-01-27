@@ -23,7 +23,6 @@ $(function () {
             $(".btnNext").addClass("nonvision");
         }
     });
-
     $('.sliderInner').slick({
         fade: true,
         arrows: false,
