@@ -3,13 +3,29 @@
 {% load static %}
 
 {% block body %}
-{% for answer in answers %}
-    <div>
-        <h3> {{ answer }} </h3>
+
+<div class="sliderInnerBackground">
+    <div class="sliderInnerCard">
+        <div class="cardText resultText">
+            {% for answer in answers %}
+            <!-- {{ answer }} -->
+                answer 
+                <!-- Значения answer все время увеличивается, из за этого div переполняется -->
+            {% endfor %}
+        </div>
+        <div class="cardInner">
+            <a class="btnIndex" href="{% url 'index'  %}">
+                Главная
+            </a>
+        </div>
     </div>
-{% endfor %}
+</div>
+
 
 {% endblock %}
 
 {% block js %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="{% static 'ui/js/libs.min.js' %}"></script>
+<script src="{% static 'ui/js/main.js' %}"></script>
 {% endblock %}
