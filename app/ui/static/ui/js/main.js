@@ -1,10 +1,10 @@
 $(function () {
     var heightHeaderFooter = $(".header").height();
-    $(".screen-height").height($(window).height() - heightHeaderFooter);
-
-    // $(window).resize(function () {
-    //     $(".screen-height").height($(window).height());
-    // });
+    function setHeiHeight() {
+        $(".screen-height").height($(window).height() - heightHeaderFooter);
+    };
+    setHeiHeight();
+    $(window).resize( setHeiHeight );
     if(!$(".btnPrev").length){
         $('.quizInnerBtn').addClass('quizInnerNonBtn');
         }
@@ -23,9 +23,6 @@ $(function () {
             $(".btnNext").addClass("nonvision");
         }
     });
-    // $("#stop").click(function(){
-        
-    // })
 
     $('.sliderInner').slick({
         fade: true,
@@ -37,18 +34,6 @@ $(function () {
     });
 });
 
-// let btn = document.querySelector('.btnNext');
-// let stop = document.getElementById('stop');
-// stop.addEventListener("click", (e) => {
-//     stop.classList.add('time')
-//     console.log(document.getElementById('stop').classList)
-//     console.log('yes')
-//     btn.classList.remove('nonvision')
-    
-
-
-// })
-// console.log(stop.classList)
 
 
 
