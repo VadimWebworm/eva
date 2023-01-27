@@ -23,7 +23,10 @@ $(function () {
             $(".btnNext").addClass("nonvision");
         }
     });
-    
+    // $("#stop").click(function(){
+        
+    // })
+
     $('.sliderInner').slick({
         fade: true,
         arrows: false,
