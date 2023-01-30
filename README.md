@@ -31,5 +31,6 @@ docker-compose build
 docker-compose up
 ``` 
 
-Откройте браузер по ссылке [localhost:8000](127.0.0.1:8000).
+Откройте браузер по ссылке [localhost:8000](127.0.0.1:8000).  
 
+Для авторизации используйте test_user:test_pass  

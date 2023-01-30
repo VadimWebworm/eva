@@ -76,7 +76,7 @@ def quiz(request, quiz_id, page):
 
 @login_required(login_url='/login')
 def results(request, quiz_id):
-    answers = Answer.objects.filter(user=request.user)
+    answers = Answer.objects.filter(user=request.user).order_by().distinct('question')
     context = {
         'answers': answers
     }

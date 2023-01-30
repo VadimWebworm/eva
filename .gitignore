@@ -3,4 +3,5 @@ __pycache__/
 *.py[cod]
 
 .idea
-/app/logs
+app/logs
+app/db.sqlite3

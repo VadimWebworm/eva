@@ -6,13 +6,14 @@
 
 <div class="sliderInnerBackground">
     <div class="sliderInnerCard">
+
+        {% for answer in answers %}
         <div class="cardText resultText">
-            {% for answer in answers %}
-            <!-- {{ answer }} -->
-                answer 
-                <!-- Значения answer все время увеличивается, из за этого div переполняется -->
-            {% endfor %}
+             {{ answer }}
         </div>
+        <br>
+        {% endfor %}
+
         <div class="cardInner">
             <a class="btnIndex" href="{% url 'index'  %}">
                 Главная

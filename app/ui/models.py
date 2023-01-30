@@ -33,6 +33,9 @@ class Answer(models.Model):
     date_time = models.DateTimeField(default='2022-12-20 12:00')
     score = models.FloatField(default=0.0)
 
+    class Meta:
+        ordering = ('date_time', )
+
     def __str__(self):
-        return f"Question: {self.question.content}, answer: {self.content}"
+        return f"Вопрос: {self.question.content}, Ваш ответ: {self.content}, оценка: {self.score:.2f}"
 
