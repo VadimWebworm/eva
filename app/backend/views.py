@@ -1,18 +1,10 @@
-import json
 import os
-import logging
 
-import requests
+from celery.result import AsyncResult
 from django.contrib.auth.decorators import login_required
 from django.http import JsonResponse
-from django.utils import timezone
 from django.views.decorators.http import require_POST
-
-from ui.models import Answer, Question
-
-logging.basicConfig(filename='logs/logs.log', level=logging.INFO)
-ASR_URL = 'http://asr:5005'
-TS_URL = 'http://ts:5000'
+from backend.celery_tasks import create_task
 
 
 def get_user_dir(user_name):
@@ -33,44 +25,27 @@ def save_wav_to_disk(request, quest_id):
     return filename
 
 
-def wav_to_text(wav_filename):
-    pass
-
-
-def text_to_score(user_answer, true_answer):
-    """ Send text data to NLP server, get the answer score """
-    r = requests.post(TS_URL, json={'s1': user_answer, 's2': true_answer})
-    j_res = json.loads(r.text)
-    score = float(j_res['Similarity'])
-
-    logging.info(f'User answer: {user_answer} , Score: {score}')
-    return score
-
-
 @require_POST
 @login_required
 def process_wav(request, quiz_id, quest_id):
     wav_filename = save_wav_to_disk(request, quest_id)
-    question = Question.objects.get(id=quest_id)
-    if os.getenv('USE_SERVICES'):
-        file_wrapper = {'wav_file': open(wav_filename, 'rb')}
-        r = requests.post(ASR_URL, files=file_wrapper)
-        j_str = json.loads(r.text)
-        user_answer = json.loads(j_str)['text']
-        true_answer = question.true_answer
-        score = text_to_score(user_answer, true_answer)
-    else:
-        user_answer = 'Сервисы распознавания голоса отключены'
-        score = 0.01
 
-    answer = Answer(
-        content=user_answer,
-        question=question,
-        user=request.user,
-        wav=wav_filename,
-        date_time=timezone.now(),
-        score=score
-    )
-    answer.save()
-    return JsonResponse({'answer': user_answer,
-                         'score': score})
+    if os.getenv('USE_SERVICES'):
+        user_id = request.user.id
+        task = create_task.delay(wav_filename, quest_id, user_id)
+        result = {'result': task.id}
+    else:
+        result = {'result': 'Сервисы распознавания голоса отключены'}
+
+    return JsonResponse(result)
+
+
+@login_required
+def get_status(request, task_id):
+    task_result = AsyncResult(task_id)
+    result = {
+        "task_id": task_id,
+        "task_status": task_result.status,
+        "task_result": task_result.result
+    }
+    return JsonResponse(result, status=200)
