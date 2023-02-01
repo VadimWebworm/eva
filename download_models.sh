@@ -11,6 +11,7 @@ then
     echo "ASR Model directory exists." 
 else
     echo "ASR Model not exists. Start downloading."
+    mkdir $ASR_MODEL_PATH
     wget https://storage.yandexcloud.net/eva-models/vosk-model-small-ru-0.22.zip -O "$ASR_MODEL_PATH/tmp.zip"
     unzip "$ASR_MODEL_PATH/tmp.zip" -d $ASR_MODEL_PATH
     rm "$ASR_MODEL_PATH/tmp.zip"
@@ -21,6 +22,7 @@ then
     echo "Text similarity model directory exists." 
 else
     echo "Text similarity model not exists. Start downloading."
+    mkdir $TS_MODEL_PATH
     wget https://storage.yandexcloud.net/eva-models/ts_model.zip -O "$TS_MODEL_PATH/tmp.zip"
     unzip "$TS_MODEL_PATH/tmp.zip" -d $TS_MODEL_PATH
     rm "$TS_MODEL_PATH/tmp.zip"
