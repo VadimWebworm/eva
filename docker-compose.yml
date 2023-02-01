@@ -13,6 +13,7 @@ services:
     depends_on:
       - asr
       - ts
+      - db
 
   asr:
     build: ./service_asr

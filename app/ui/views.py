@@ -81,4 +81,3 @@ def results(request, quiz_id):
         'answers': answers
     }
     return render(request, 'ui/results.html', context)
-

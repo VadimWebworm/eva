@@ -1,0 +1,60 @@
+version: '3.8'
+
+services:
+  web:
+    build:
+      context: ./app
+      dockerfile: Dockerfile.prod
+    command: gunicorn eva.wsgi:application --bind 0.0.0.0:8000
+    volumes:
+      - static_volume:/home/app/web/staticfiles
+    expose:
+      - 8000
+    env_file:
+      - ./.env.prod
+    depends_on:
+      - asr
+      - ts
+      - db
+
+  asr:
+    build: ./service_asr
+    ports:
+      - "5005:5005"
+  ts:
+    build: ./service_text_similarity
+    ports:
+      - "5000:5000"
+  db:
+    image: postgres:13.0-alpine
+    volumes:
+      - ./postgres_data_prod:/var/lib/postgresql/data
+    env_file:
+      - ./.env.prod.db
+
+  celery:
+    build: ./app
+    command: celery -A eva worker --loglevel=info
+    volumes:
+      - ./app:/usr/src/app
+    env_file:
+      - ./.env.prod.celery
+    depends_on:
+      - web
+      - redis
+
+  redis:
+    image: redis:5-alpine
+
+  nginx:
+    build: ./nginx
+    volumes:
+      - static_volume:/home/app/web/staticfiles
+    ports:
+      - 1337:80
+    depends_on:
+      - web
+
+volumes:
+  static_volume:
+#  postgres_data:

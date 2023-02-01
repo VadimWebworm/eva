@@ -47,5 +47,3 @@ def create_task(wav_filename, quest_id, user_id):
     answer.save()
 
     return True
-
-

@@ -5,3 +5,4 @@ __pycache__/
 .idea
 app/logs
 app/db.sqlite3
+.env.prod*

@@ -12,7 +12,7 @@ async def async_wav_to_text(wav_path):
         wf = wave.open(wav_path, "rb")
         print(wav_path, ' opened')
         await websocket.send('{ "config" : { "sample_rate" : %d } }' % (wf.getframerate()))
-        buffer_size = int(wf.getframerate() * 0.5) # 0.2 seconds of audio
+        buffer_size = int(wf.getframerate() * 0.5)  # 0.2 seconds of audio
         while True:
             data = wf.readframes(buffer_size)
 
