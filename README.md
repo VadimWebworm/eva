@@ -14,19 +14,25 @@
 ## Запуск приложения
 
 1) Скачайте репозиторий  
-```
+```commandline
 git clone https://github.com/labintsev/eva.git
+cd eva
+```   
+
+2) Скачайте модели 
+```commandline
+bash download_models.sh
 ```
 
-2.1) Запуск в режиме разработки UI  
-```
+3.1) Запуск в режиме разработки UI  
+```commandline
 cd app  
 pip install -r requirements.txt  
 python manage.py runserver 
 ``` 
 
-2.2) Запуск в docker контейнерах вместе с сервисами распознавания голоса и текста  
-```
+3.2) Запуск в docker контейнерах вместе с сервисами распознавания голоса и текста  
+```commandline
 docker-compose build  
 docker-compose up
 ``` 
