@@ -12,6 +12,7 @@
 
 
 ## Запуск приложения
+0) Установите ``` unzip docker-ce docker-compose```  
 
 1) Скачайте репозиторий  
 ```commandline
@@ -33,8 +34,7 @@ python manage.py runserver
 
 3.2) Запуск в docker контейнерах вместе с сервисами распознавания голоса и текста  
 ```commandline
-docker-compose build  
-docker-compose up
+docker-compose up --build  
 ``` 
 
 Откройте браузер по ссылке [localhost:8000](127.0.0.1:8000).  
