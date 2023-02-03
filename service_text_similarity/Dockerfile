@@ -10,4 +10,4 @@ COPY . .
 
 EXPOSE 5000
 
-CMD [ "gunicorn", "--bind", "0.0.0.0:5000", "ts_app:get_app()" ]
+CMD [ "gunicorn", "--bind", "0.0.0.0:5000", "--worker-tmp-dir", "/dev/shm", "ts_app:get_app()" ]
