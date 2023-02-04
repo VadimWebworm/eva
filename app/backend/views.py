@@ -2,27 +2,25 @@ import os
 
 from celery.result import AsyncResult
 from django.contrib.auth.decorators import login_required
+from django.core.files.storage import FileSystemStorage
 from django.http import JsonResponse
 from django.views.decorators.http import require_POST
+from django.utils.timezone import datetime
 from backend.celery_tasks import create_task
 
-
-def get_user_dir(user_name):
-    user_dir = f'wavs/{user_name}'
-    if not os.path.exists(user_dir):
-        os.mkdir(user_dir)
-    return user_dir
+import logging
+logging.basicConfig(filename='logs/logs.log', level=logging.INFO)
 
 
 def save_wav_to_disk(request, quest_id):
     user_name = str(request.user)
-    user_dir = get_user_dir(user_name)
-    filename = f'{user_dir}/{quest_id}_date.wav'
+    date_time_str = str(datetime.now()).replace(' ', '_').split('.')[0]
+    filename = f'{user_name}_{quest_id}_{date_time_str}.wav'
     file_in_memory = request.FILES['voice']
-    blob = file_in_memory.read()
-    with open(filename, 'wb') as fn:
-        fn.write(blob)
-    return filename
+    fs = FileSystemStorage()
+    new_fn = fs.save(filename, file_in_memory)
+    logging.info(f'File {filename} saved, new file name: {new_fn}')
+    return new_fn
 
 
 @require_POST
@@ -37,6 +35,7 @@ def process_wav(request, quiz_id, quest_id):
     else:
         result = {'result': 'Сервисы распознавания голоса отключены'}
 
+    logging.info(result)
     return JsonResponse(result)
 
 

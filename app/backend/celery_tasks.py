@@ -2,6 +2,7 @@ import json
 import requests
 
 from celery import shared_task
+from django.core.files.storage import FileSystemStorage
 from django.utils import timezone
 from ui.models import Answer, Question
 from django.contrib.auth.models import User
@@ -25,8 +26,9 @@ def text_to_score(user_answer, true_answer):
 
 @shared_task
 def create_task(wav_filename, quest_id, user_id):
-
-    file_wrapper = {'wav_file': open(wav_filename, 'rb')}
+    fs = FileSystemStorage()
+    wav_file = fs.open(wav_filename)
+    file_wrapper = {'wav_file': wav_file}
     r = requests.post(ASR_URL, files=file_wrapper)
     j_str = json.loads(r.text)
 
