@@ -322,7 +322,6 @@ footer {
     }
     h4 {
         margin: 7px 0 20px;
-        font-size: 18px;
         font-size: 20px;
         font-weight: 400;
         color: rgba(0, 255, 127, 0.7);
@@ -391,11 +390,434 @@ button {
 .nonvision {
     display: none;
 }
-.quizInnerNonBtn{
+.quizInnerNonBtn {
     margin-bottom: 56px;
 }
-.sound-clips{
+.sound-clips {
     margin-bottom: 20px;
 }
 
 // quiz end
+
+// start media
+
+@media (max-width: 1450px) {
+    .headerLogoOne {
+        height: 0;
+        margin-top: 60px;
+        img {
+            margin: auto;
+            left: 0;
+            bottom: 10px;
+            right: 0;
+        }
+    }
+}
+@media (max-width: 1090px) {
+    .headerMenu {
+        ul {
+            li {
+                display: block;
+                text-align: left;
+                & + li {
+                    margin-left: 0px;
+                    padding-top: 10px;
+                }
+            }
+        }
+    }
+}
+@media (max-width: 1020px) {
+    .headerLogoTwo {
+        margin-left: 0px;
+        justify-content: left;
+        img {
+            margin-left: 20px;
+        }
+    }
+    .logoTwoText {
+        font-size: 16px;
+        p {
+            font-size: 24px;
+        }
+    }
+    .sliderInnerBackground {
+        width: 95%;
+    }
+    .sliderBackgroundTitle {
+        font-size: 36px;
+    }
+}
+@media (max-width: 920px) {
+    .headerInnerTop {
+        padding-bottom: 0;
+    }
+    .headerLogoOne {
+        margin-top: 10px;
+        img {
+            width: 40%;
+        }
+    }
+    .headerLogoTwo img {
+        height: 85px;
+    }
+    .headerTitle {
+        font-size: 26px;
+        padding-top: 10px;
+    }
+    .logoOneText {
+        font-size: 14px;
+    }
+    .headerMenu {
+        font-size: 14px;
+    }
+    .logoTwoText {
+        font-size: 14px;
+        p {
+            font-size: 21px;
+        }
+    }
+    .sliderBackgroundTitle {
+        font-size: 28px;
+    }
+}
+@media (max-width: 840px) {
+    .headerTop {
+        background-image: none;
+    }
+    .headerInnerTop {
+        height: 300px;
+        flex-wrap: wrap;
+        flex-direction: column;
+        display: block;
+    }
+    .headerLogoOne {
+        display: flex;
+        margin-top: 0;
+        max-width: 510px;
+        // padding-top: 85px;
+        img {
+            // bottom: 0px;
+            // margin: 0;
+            // bottom: -50px;
+            // left: -40px;
+            position: relative;
+            margin: auto;
+            left: 0;
+            bottom: 0;
+            width: 43%;
+        }
+    }
+    .logoOneText {
+        padding-top: 15px;
+        font-size: 24px;
+    }
+    .headerLogoTwo {
+        margin-top: 100px;
+        display: flex;
+        text-align: left;
+        flex-direction: row-reverse;
+        max-width: 780px;
+        img {
+            margin-left: 25px;
+            height: 100px;
+        }
+    }
+    .logoTwoText {
+        padding-left: 50px;
+        font-size: 24px;
+        p {
+            font-size: 32px;
+            line-height: 40px;
+        }
+    }
+    .headerMenu {
+        margin-top: 15px;
+        font-size: 22px;
+    }
+    .headerTitle {
+        font-size: 30px;
+        padding-top: 6px;
+    }
+    .quizInnerItem {
+        h1 {
+            font-size: 32px;
+        }
+    }
+}
+@media (max-width: 775px) {
+    .logoOneText {
+        font-size: 16px;
+    }
+    .logoTwoText {
+        font-size: 18px;
+        padding-left: 40px;
+        p {
+            font-size: 26px;
+        }
+    }
+    .headerMenu {
+        font-size: 16px;
+        margin-top: 25px;
+    }
+    .headerLogoOne {
+        max-width: 370px;
+        img {
+            width: 35%;
+        }
+    }
+    .headerLogoTwo {
+        max-width: 580px;
+        img {
+            height: 85px;
+        }
+    }
+    .sliderBackgroundTitle {
+        font-size: 24px;
+        padding: 30px 20px 40px;
+    }
+    .quizInnerItem {
+        h1 {
+            font-size: 26px;
+        }
+    }
+}
+@media (max-width: 607px) {
+    .headerInnerTop {
+        height: 250px;
+    }
+    .headerLogoOne {
+        max-width: 300px;
+    }
+    .headerLogoTwo {
+        max-width: 480px;
+        margin-top: 75px;
+        img {
+            height: 80px;
+            margin-left: 20px;
+        }
+    }
+    .logoOneText {
+        font-size: 12px;
+    }
+    .logoTwoText {
+        font-size: 14px;
+        padding-left: 30px;
+        p {
+            font-size: 22px;
+        }
+    }
+    .headerMenu {
+        font-size: 14px;
+        margin-top: 25px;
+    }
+    .headerTitle {
+        font-size: 24px;
+        padding-top: 10px;
+    }
+    .sliderBackgroundTitle {
+        font-size: 20px;
+    }
+    .quizInnerItem {
+        h1 {
+            font-size: 22px;
+        }
+        div {
+            font-size: 18px;
+        }
+        h4 {
+            font-size: 18px;
+        }
+        a {
+            font-size: 16px;
+        }
+    }
+}
+@media (max-width: 491px) {
+    .headerLogoOne {
+        max-width: 281px;
+        padding-top: 10px;
+        img {
+            width: 30%;
+            margin-right: 10px;
+        }
+    }
+    .logoOneText {
+        padding-top: 10px;
+    }
+    .headerLogoTwo {
+        max-width: 480px;
+        margin-top: 75px;
+        img {
+            height: 75px;
+            margin-left: 10px;
+            padding-right: 0;
+        }
+    }
+    .logoOneText {
+        font-size: 14px;
+    }
+    .logoTwoText {
+        font-size: 14px;
+        padding-left: 25px;
+        p {
+            font-size: 18px;
+            line-height: 20px;
+        }
+    }
+    .sliderBackgroundTitle {
+        font-size: 22px;
+    }
+    .loginDetails {
+        input {
+            max-width: 240px;
+            margin-right: 15px;
+        }
+    }
+    .sliderInnerCard {
+        padding: 25px 40px 25px;
+    }
+    .cardTitle {
+        font-size: 22px;
+    }
+    .cardInner {
+        font-size: 16px;
+        padding-top: 7px;
+        a {
+            font-size: 22px;
+        }
+    }
+    .quizInnerItem {
+        h1 {
+            font-size: 18px;
+        }
+        div {
+            font-size: 16px;
+        }
+        h4 {
+            font-size: 16px;
+        }
+        a {
+            font-size: 14px;
+        }
+    }
+    button{
+        font-size: 12px;
+        width: 80px;
+    }
+    .sound-clips{
+        audio{
+            width: 250px;
+            height: 45px;
+        }
+    }
+}
+@media (max-width: 371px) {
+    .headerInnerTop {
+        height: 200px;
+    }
+    .headerLogoOne {
+        max-width: 281px;
+        padding-top: 10px;
+        img {
+            width: 25%;
+            margin-right: 0px;
+        }
+    }
+    .logoOneText {
+        font-size: 12px;
+        margin-right: 25px;
+    }
+    .headerLogoTwo {
+        max-width: 480px;
+        margin-top: 55px;
+        img {
+            height: 60px;
+            margin-left: 7px;
+            padding-right: 0;
+        }
+    }
+    .logoTwoText {
+        font-size: 12px;
+        padding-left: 10px;
+        p {
+            font-size: 16px;
+            line-height: 20px;
+        }
+        div {
+            padding-top: 6px;
+        }
+    }
+    .headerMenu {
+        margin-top: 15px;
+    }
+    .headerTitle {
+        font-size: 18px;
+        padding-top: 13px;
+    }
+    .sliderBackgroundTitle {
+        font-size: 18px;
+    }
+    .footerInner {
+        font-size: 12px;
+        padding-top: 22px;
+    }
+    .loginDetails {
+        label {
+            font-size: 18px;
+        }
+        input {
+            max-width: 200px;
+            margin-right: 15px;
+        }
+    }
+    .sliderInnerCard {
+        padding: 20px 35px 20px;
+    }
+    .cardTitle {
+        font-size: 18px;
+    }
+    .cardInner {
+        font-size: 12px;
+        padding-top: 7px;
+        a {
+            font-size: 18px;
+        }
+    }
+    .calltoaction__button {
+        margin-top: 20px;
+    }
+    .quizInnerItem {
+        h1 {
+            font-size: 16px;
+        }
+        div {
+            font-size: 14px;
+        }
+        h4 {
+            font-size: 14px;
+        }
+        a {
+            font-size: 12px;
+        }
+    }
+}
+@media (max-width: 320px) {
+    .loginLabel {
+        font-size: 16px;
+    }
+    .loginDetails {
+        label {
+            font-size: 14px;
+        }
+        input {
+            max-width: 180px;
+            margin-right: 15px;
+        }
+    }
+    .sliderInnerCard {
+        padding: 15px 24px 15px;
+    }
+}
+
+//end media

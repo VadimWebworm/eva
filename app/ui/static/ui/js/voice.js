@@ -63,7 +63,7 @@ function createDownloadLink(blob) {
         const audioURL = window.URL.createObjectURL(blob);
         audio.src = audioURL;
     }
-    var endpoint = "/api/1/wav/" + question_id.value
+    let endpoint = "/api/1/wav/" + question_id.value
     console.log("Send POST to endpoint: " + endpoint)
     fetch(endpoint, {
         credentials: 'include',
