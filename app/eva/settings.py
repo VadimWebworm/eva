@@ -21,9 +21,8 @@ MEDIA_ROOT = BASE_DIR / "mediafiles"
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
-SECRET_KEY = os.environ.get("SECRET_KEY")
-if not SECRET_KEY:
-    SECRET_KEY = 'django-insecure-w*isf0umh(_tshy2ull7edab)illl(5i)vjm)8pjapx(ioo$72'
+SECRET_KEY = os.environ.get("SECRET_KEY",
+                            'django-insecure-w*isf0umh(_tshy2ull7edab)illl(5i)vjm)8pjapx(ioo$72')
 
 DEBUG = int(os.environ.get("DEBUG", default=1))
 
@@ -44,13 +43,14 @@ SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
 # Application definition
 
 INSTALLED_APPS = [
-    'ui.apps.UiConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'ui',
+    'backend',
 ]
 
 MIDDLEWARE = [
@@ -143,3 +143,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CELERY_BROKER_URL = os.environ.get("CELERY_BROKER", "redis://redis:6379/0")
 CELERY_RESULT_BACKEND = os.environ.get("CELERY_BROKER", "redis://redis:6379/0")
+
+USE_SERVICES = os.getenv('USE_SERVICES', False)
+

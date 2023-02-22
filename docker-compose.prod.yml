@@ -38,7 +38,7 @@ services:
     command: celery -A eva worker --loglevel=info
     volumes:
       - ./app:/usr/src/app
-      - ./media_volume:/usr/src/app/mediafiles
+      - /var/www/evaproject.online/media:/usr/src/app/mediafiles
     env_file:
       - ./.env.prod.celery
     depends_on:

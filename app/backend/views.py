@@ -1,5 +1,3 @@
-import os
-
 from celery.result import AsyncResult
 from django.contrib.auth.decorators import login_required
 from django.core.files.storage import default_storage
