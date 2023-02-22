@@ -49,6 +49,21 @@ services:
       - redis
 
   redis:
-    image: redis:5-alpine
-#volumes:
-#  postgres_data:
+    image: redis:7-alpine
+
+  dashboard:
+    build: ./app
+    command: celery --app=eva flower --broker=redis://redis:6379/0 --port=5555
+    ports:
+      - 5555:5555
+    volumes:
+      - ./app:/usr/src/app
+    env_file:
+      - ./.env.dev
+    depends_on:
+      - web
+      - redis
+      - celery
+
+volumes:
+  postgres_dev:
