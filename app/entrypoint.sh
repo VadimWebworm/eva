@@ -12,9 +12,9 @@ then
 fi
 
 # Uncomment to clear all previous data
-# python manage.py flush --no-input
-
+python manage.py flush --no-input
+python manage.py makemigrations
 python manage.py migrate
-python manage.py loaddata fixtures/data.json
+python manage.py loaddata fixtures/data.json fixtures/users.json
 
 exec "$@"
