@@ -34,7 +34,7 @@ class Answer(models.Model):
     score = models.FloatField(default=0.0)
 
     class Meta:
-        ordering = ('date_time', )
+        ordering = ('-date_time', )
 
     def __str__(self):
         return f"Вопрос: {self.question.content}, Ваш ответ: {self.content}, оценка: {self.score:.2f}"
