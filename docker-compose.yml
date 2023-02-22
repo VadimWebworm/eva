@@ -2,7 +2,9 @@ version: '3.8'
 
 services:
   web:
-    build: ./app
+    build:
+      context: ./app
+      dockerfile: Dockerfile
     command: python manage.py runserver 0.0.0.0:8000
     volumes:
       - ./app/:/usr/src/app/
@@ -14,6 +16,7 @@ services:
       - asr
       - ts
       - db
+      - redis
 
   asr:
     build: ./service_asr
@@ -26,8 +29,7 @@ services:
   db:
     image: postgres:13.0-alpine
     volumes:
-      - ./postgres_data:/var/lib/postgresql/data
-
+      - postgres_dev:/var/lib/postgresql/data
     environment:
       - POSTGRES_USER=eva_django
       - POSTGRES_PASSWORD=eva_django
@@ -35,15 +37,11 @@ services:
 
   celery:
     build: ./app
-    command: celery -A eva worker --loglevel=info
+    command: celery --app=eva worker --loglevel=info --logfile=logs/celery.log
     volumes:
       - ./app:/usr/src/app
-    environment:
-      - DEBUG=1
-      - SECRET_KEY=dbaa1_i7%*3r9-=z-+_mz4r-!qeed@(-a_r(g@k8jo8y3r27%m
-      - DJANGO_ALLOWED_HOSTS=localhost 127.0.0.1 [::1]
-      - CELERY_BROKER=redis://redis:6379/0
-      - CELERY_BACKEND=redis://redis:6379/0
+    env_file:
+      - ./.env.dev
     depends_on:
       - web
       - redis
