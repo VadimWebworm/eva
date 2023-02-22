@@ -2,7 +2,7 @@ import os
 
 from celery.result import AsyncResult
 from django.contrib.auth.decorators import login_required
-from django.core.files.storage import FileSystemStorage
+from django.core.files.storage import default_storage
 from django.http import JsonResponse
 from django.views.decorators.http import require_POST
 from django.utils.timezone import datetime
@@ -17,8 +17,7 @@ def save_wav_to_disk(request, quest_id):
     date_time_str = str(datetime.now()).replace(' ', '_').split('.')[0]
     filename = f'{user_name}_{quest_id}_{date_time_str}.wav'
     file_in_memory = request.FILES['voice']
-    fs = FileSystemStorage()
-    new_fn = fs.save(filename, file_in_memory)
+    new_fn = default_storage.save(filename, file_in_memory)
     logging.info(f'File {filename} saved, new file name: {new_fn}')
     return new_fn
 
