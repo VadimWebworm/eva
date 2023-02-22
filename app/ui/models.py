@@ -37,4 +37,4 @@ class Answer(models.Model):
         ordering = ('-date_time', )
 
     def __str__(self):
-        return f"Вопрос: {self.question.content}, Ваш ответ: {self.content}, оценка: {self.score:.2f}"
+        return self.content

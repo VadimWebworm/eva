@@ -5,21 +5,26 @@
 {% block body %}
 
 <div class="sliderInnerBackground">
+
     <div class="sliderInnerCard">
+        {% if answers %}
+            {% for answer in answers %}
 
-        {% for answer in answers %}
-        <div class="cardText resultText">
-             {{ answer }}
-        </div>
-        <br>
-        {% endfor %}
+            <div class="cardInner">
+                <p>Вопрос: {{ answer.question.content }}</p>
+                <p>Правильный ответ: {{ answer.question.true_answer }}</p>
+                <p>Ваш ответ: {{ answer.content }}</p>
+                <p>Ваша оценка: {{ answer.score }}</p>
+            </div>
 
-        <div class="cardInner">
-            <a class="btnIndex" href="{% url 'index'  %}">
-                Главная
-            </a>
-        </div>
+            {% endfor %}
+        {% else %}
+            <div class="cardInner">
+                 No saved results
+            </div>
+        {% endif %}
     </div>
+
 </div>
 
 
