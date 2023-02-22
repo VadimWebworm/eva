@@ -42,5 +42,8 @@ class Migration(migrations.Migration):
                 ('question', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='ui.question')),
                 ('user', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
             ],
+            options={
+                'ordering': ('-date_time',),
+            },
         ),
     ]
