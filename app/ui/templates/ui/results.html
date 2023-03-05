@@ -4,24 +4,32 @@
 
 {% block body %}
 
-<div class="sliderInnerBackground">
-
-    <div class="sliderInnerCard">
-        {% if answers %}
-            {% for answer in answers %}
-
-            <div class="cardInner">
-                <p>Вопрос: {{ answer.question.content }}</p>
-                <p>Правильный ответ: {{ answer.question.true_answer }}</p>
-                <p>Ваш ответ: {{ answer.content }}</p>
-                <p>Ваша оценка: {{ answer.score }}</p>
+<div class="sliderInnerBackground tabsInnerBackground">
+    <div class="sliderInnerCard tabsInnerCard">
+        <div class="cardInner tabsInner">
+            <div class="tabs">
+                {% if answers %}
+                {% for answer in answers %}
+                <span class="tab" data-id='{{answer.question.id}}'>
+                    {{ answer.question.id }} Вопрос
+                </span>
+                {% endfor %}
             </div>
-
-            {% endfor %}
+            <div class="tabContent">
+                {% for answer in answers %}
+                <div class="tabItem" id="{{answer.question.id}}">
+                    <p><span>Вопрос:</span> {{ answer.question.content }}</p>
+                    <p><span>Правильный ответ:</span> {{ answer.question.true_answer }}</p>
+                    <p><span>Ваш ответ:</span> {{ answer.content }}</p>
+                    <p><span>Ваша оценка:</span> {{ answer.score }}</p>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
         {% else %}
-            <div class="cardInner">
-                 No saved results
-            </div>
+        <div class="cardInner">
+            No saved results
+        </div>
         {% endif %}
     </div>
 

@@ -163,7 +163,7 @@ footer {
     z-index: 101;
     border-radius: 8px;
     top: 50%;
-    margin-top: -3%;
+    margin-top: -2rem;
     left: 50%;
     margin-right: -50%;
     transform: translate(-50%, -50%);
@@ -171,6 +171,7 @@ footer {
     max-width: 1000px;
     width: 100%;
     background-color: #2a106bc0;
+    border: 5px solid #2a106b;
 }
 .footer {
     background-color: #2a106b;
@@ -398,6 +399,62 @@ button {
 }
 
 // quiz end
+//result start
+.tabsInnerBackground {
+    height: 500px;
+    margin-top: 0rem;
+}
+.tabsInnerCard {
+    padding: 0;
+}
+.tabsInner {
+    display: flex;
+    position: relative;
+    z-index: 0;
+}
+.tabs {
+    position: relative;
+    &::after {
+        top: -7px;
+        right: 0px;
+        content: "";
+        position: absolute;
+        height: 494px;
+        width: 5px;
+        background-color: #2a106b;
+    }
+}
+.tab {
+    display: block;
+    cursor: pointer;
+    width: 170px;
+    height: 40px;
+    padding: 10px 10px 10px 10px;
+    font-weight: 600;
+}
+.tabItem {
+    display: none;
+}
+.tabItem.tabActive {
+    display: block;
+}
+.tab.tabActive {
+    text-decoration: underline;
+}
+.tabContent {
+    text-align: left;
+    padding: 10px 20px;
+}
+.tabItem {
+    p {
+    margin-top: 0px;
+    }
+    span{
+        font-weight: 600;
+    }
+}
+
+//result end
 
 // start media
 
@@ -701,12 +758,12 @@ button {
             font-size: 14px;
         }
     }
-    button{
+    button {
         font-size: 12px;
         width: 80px;
     }
-    .sound-clips{
-        audio{
+    .sound-clips {
+        audio {
             width: 250px;
             height: 45px;
         }
