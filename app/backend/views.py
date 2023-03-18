@@ -7,6 +7,9 @@ from django.utils.timezone import datetime
 from backend.celery_tasks import create_task
 
 import logging
+
+from eva import settings
+
 logging.basicConfig(filename='logs/logs.log', level=logging.INFO)
 
 
@@ -24,9 +27,13 @@ def save_wav_to_disk(request, quest_id):
 @login_required
 def process_wav(request, quiz_id, quest_id):
     wav_filename = save_wav_to_disk(request, quest_id)
-    user_id = request.user.id
-    task = create_task.delay(wav_filename, quest_id, user_id)
-    result = {'result': task.id}
+
+    if settings.USE_SERVICES:
+        user_id = request.user.id
+        task = create_task.delay(wav_filename, quest_id, user_id)
+        result = {'result': task.id}
+    else:
+        result = {'result': 'Services disabled'}
 
     logging.info(result)
     return JsonResponse(result)

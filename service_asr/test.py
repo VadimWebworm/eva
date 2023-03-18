@@ -35,7 +35,7 @@ def test_vosk():
 
 
 def test_app():
-    files = {'wav_file': open('wavs/2_date.wav', 'rb')}
+    files = {'wav_file': open('../wavs/2_date.wav', 'rb')}
 
     r = requests.post(URL, files=files)
     print(r.encoding)

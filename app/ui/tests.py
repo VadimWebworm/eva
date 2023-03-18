@@ -1,8 +1,8 @@
 from django.contrib.auth.models import User
 from django.test import TestCase, Client, RequestFactory
 
-from app.ui import views
-from app.ui.models import Quiz, Question
+from ui import views
+from ui.models import Quiz, Question
 
 
 class UiTestCase(TestCase):
@@ -24,7 +24,7 @@ class UiTestCase(TestCase):
         client = Client()
         response = client.get('')
         self.assertEqual(response.status_code, 200)
-        self.assertContains(response, 'Для работы с Евой нужно авторизоваться')
+        self.assertContains(response, 'Для работы с Евой необходимо авторизоваться')
 
     def test_index(self):
         client = Client()
