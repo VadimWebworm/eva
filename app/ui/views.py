@@ -5,7 +5,7 @@ from django.core.paginator import Paginator
 from django.shortcuts import render, redirect
 
 
-from ui.models import Quiz, Answer
+from ui.models import Quiz, Answer, Question
 
 
 def Signup(request):
@@ -76,7 +76,11 @@ def quiz(request, quiz_id, page):
 
 @login_required(login_url='/login')
 def results(request, quiz_id):
-    answers = Answer.objects.filter(user=request.user).order_by().distinct('question')
+    questions = Question.objects.all()
+    answers = []
+    for q in questions:
+        user_answers = Answer.objects.filter(user=request.user).filter(question=q).order_by()
+        answers.append(user_answers[0])
     context = {
         'answers': answers
     }
