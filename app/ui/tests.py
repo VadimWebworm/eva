@@ -2,7 +2,7 @@ from django.contrib.auth.models import User
 from django.test import TestCase, Client, RequestFactory
 
 from ui import views
-from ui.models import Quiz, Question
+from ui.models import Quiz, Question, Answer
 
 
 class UiTestCase(TestCase):
@@ -40,3 +40,21 @@ class UiTestCase(TestCase):
         response = views.quiz(request, 1, 1)
         self.assertEqual(response.status_code, 200)
         self.assertContains(response, 'Запись'.encode("ascii", "ignore"))
+
+
+class AnswerTestCase(TestCase):
+    fixtures = ['users.json', 'data.json']
+
+    def setUp(self) -> None:
+        self.factory = RequestFactory()
+        self.user = User.objects.get(pk=1)
+
+    def test_result_view(self):
+        request = self.factory.get('')
+        request.user = self.user
+        response = views.results(request, 1)
+        # print(response.content)
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, 'Answer 1. First')
+        self.assertNotContains(response, 'Answer 1. Last')
+

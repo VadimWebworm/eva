@@ -15,7 +15,7 @@ fi
 python manage.py flush --no-input
 python manage.py makemigrations
 python manage.py migrate
-python manage.py loaddata fixtures/data.json fixtures/users.json
+python manage.py loaddata ui/fixtures/data.json ui/fixtures/users.json
 python manage.py collectstatic --no-input --clear
 
 exec "$@"

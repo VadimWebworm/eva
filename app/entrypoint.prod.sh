@@ -12,7 +12,7 @@ then
 fi
 
 python manage.py migrate
-python manage.py loaddata fixtures/data.json
+python manage.py loaddata ui/fixtures/data.json ui/fixtures/users.json
 python manage.py collectstatic --no-input --clear
 
 exec "$@"

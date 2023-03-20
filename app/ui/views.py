@@ -80,7 +80,8 @@ def results(request, quiz_id):
     answers = []
     for q in questions:
         user_answers = Answer.objects.filter(user=request.user).filter(question=q).order_by()
-        answers.append(user_answers[0])
+        if len(user_answers) > 0:
+            answers.append(user_answers[0])
     context = {
         'answers': answers
     }

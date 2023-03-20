@@ -29,6 +29,11 @@
       "true_answer": "переменная, значения которой представляют собой численные исходы некоторого случайного эксперимента",
       "quiz": 1
     }
-  }
-
+  },
+  {"model": "ui.answer", "pk": 1, "fields": {"content": "Answer 1. First", "question": 1, "user": 1, "wav": "", "date_time": "2023-03-10T11:17:49.247Z", "score": 0.0}},
+  {"model": "ui.answer", "pk": 2, "fields": {"content": "Answer 2. First", "question": 2, "user": 1, "wav": "", "date_time": "2023-03-10T11:18:13.859Z", "score": 0.0}},
+  {"model": "ui.answer", "pk": 3, "fields": {"content": "Answer 3. First", "question": 3, "user": 1, "wav": "", "date_time": "2023-03-10T11:18:26.804Z", "score": 0.0}},
+  {"model": "ui.answer", "pk": 4, "fields": {"content": "Answer 1. Last", "question": 1, "user": 1, "wav": "", "date_time": "2023-03-20T11:17:49.247Z", "score": 0.0}},
+  {"model": "ui.answer", "pk": 5, "fields": {"content": "Answer 2. Last", "question": 2, "user": 1, "wav": "", "date_time": "2023-03-20T11:18:13.859Z", "score": 0.0}},
+  {"model": "ui.answer", "pk": 6, "fields": {"content": "Answer 3. Last", "question": 3, "user": 1, "wav": "", "date_time": "2023-03-20T11:18:26.804Z", "score": 0.0}}
 ]
