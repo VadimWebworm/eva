@@ -4,7 +4,7 @@ services:
   web:
     build:
       context: ./app
-      dockerfile: Dockerfile.prod
+      dockerfile: Dockerfile
     command: gunicorn eva.wsgi:application --bind 0.0.0.0:8000
     volumes:
       - /var/www/evaproject.online/static:/home/app/web/staticfiles
