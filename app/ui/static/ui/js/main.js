@@ -5,6 +5,7 @@ $(function () {
     };
     setHeiHeight();
     $(window).resize(setHeiHeight);
+
     if (!$(".btnPrev").length) {
         $('.quizInnerBtn').addClass('quizInnerNonBtn');
     }
