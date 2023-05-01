@@ -401,28 +401,25 @@ button {
 // quiz end
 //result start
 .tabsInnerBackground {
-    height: 500px;
+    height: 50vh;
+    // max-height: 500px;
+    // height: 100%;
     margin-top: 0rem;
+    overflow-y: auto;
 }
 .tabsInnerCard {
     padding: 0;
+    height: 100%;
 }
 .tabsInner {
     display: flex;
     position: relative;
     z-index: 0;
+    padding-top: 0;
+    height: 100%;
 }
 .tabs {
-    position: relative;
-    &::after {
-        top: -7px;
-        right: 0px;
-        content: "";
-        position: absolute;
-        height: 494px;
-        width: 5px;
-        background-color: #2a106b;
-    }
+    border-right: 5px solid #2a106b;
 }
 .tab {
     display: block;
@@ -447,9 +444,9 @@ button {
 }
 .tabItem {
     p {
-    margin-top: 0px;
+        margin-top: 0px;
     }
-    span{
+    span {
         font-weight: 600;
     }
 }
@@ -638,6 +635,13 @@ button {
             font-size: 26px;
         }
     }
+    .tab {
+        font-size: 18px;
+        width: 150px;
+    }
+    .tabItem p {
+        font-size: 18px;
+    }
 }
 @media (max-width: 607px) {
     .headerInnerTop {
@@ -688,6 +692,18 @@ button {
         a {
             font-size: 16px;
         }
+    }
+    .tab {
+        height: 30px;
+        padding: 10px 10px 0px 10px;
+        font-size: 14px;
+        width: 90px;
+    }
+    .tabContent {
+        padding: 10px;
+    }
+    .tabItem p {
+        font-size: 14px;
     }
 }
 @media (max-width: 491px) {
@@ -767,6 +783,17 @@ button {
             width: 250px;
             height: 45px;
         }
+    }
+    .tabs {
+        &::after {
+            top: -20px;
+        }
+    }
+    .tabsInnerCard {
+        padding: 0px;
+    }
+    .tabsInner {
+        padding: 0;
     }
 }
 @media (max-width: 371px) {
@@ -858,6 +885,20 @@ button {
             font-size: 12px;
         }
     }
+    .tabsInnerCard {
+        padding: 0px;
+    }
+    .tabsInner {
+        padding: 0;
+    }
+    .tab {
+        height: 26px;
+        font-size: 12px;
+        width: 70px;
+    }
+    .tabItem p {
+        font-size: 12px;
+    }
 }
 @media (max-width: 320px) {
     .loginLabel {
@@ -874,6 +915,20 @@ button {
     }
     .sliderInnerCard {
         padding: 15px 24px 15px;
+    }
+    .tabsInnerCard {
+        padding: 0px;
+    }
+    .tabsInner {
+        padding: 0;
+    }
+    .tab {
+        height: 26px;
+        font-size: 12px;
+        width: 70px;
+    }
+    .tabItem p {
+        font-size: 12px;
     }
 }
 
